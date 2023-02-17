@@ -13,7 +13,7 @@
     <div class="containter">
         <header>
             <div class="banner">
-                <h1>OcioJs</h1>
+                <h1><a href="../index.html">OcioJs</a></h1>
             </div>
             <nav>
                 <ul class="nav-link">
@@ -25,79 +25,104 @@
         </header>
         <main>
             <section class="game-active">
-                <div class="tp-game">
 
-                    <div id="arco">
-                        <div id="arco-lado-1" class="arco-lado">1</div>
-                        <div id="arco-lado-2" class="arco-lado">2</div>
-                        <div id="arco-lado-3" class="arco-lado">3</div>
-                        <div id="arco-lado-4" class="arco-lado">4</div>
-                        <div id="arco-lado-5" class="arco-lado">5</div>
-                        <div id="arco-lado-6" class="arco-lado">6</div>
+                <div class="resultado">
+                    <div class="tp-score" id="local-score">
+                        <p id="name-player"></p>
+                        <p id="human-score"></p>
+                        <p id="human-dir"></p>
                     </div>
-                    <br>
-                    <button id="btn-iniciar">INICIAR</button>
-                    <button id="btn-reset">RESET</button>
-                    <button id="btn-hard">HARD</button>
-                    <br>
-                    <div id="definicion" class="definicion">
-
-                        <div class="tp-score" id="local-score">
-                            <p id="name-player"></p>
-                            <p id="human-score"></p>
-                            <p id="human-dir"></p>
-                        </div>
-                        <div class="tp-score-separador">-</div>
-                        <div class="tp-score">
-                            <p>CPU</p>
-                            <p id="cpu-score"></p>
-                         <p id="cpu-dir"></p>
-                        </div>
-
+                    <div class="tp-score-separador">
+                        <h4 id="goal"></h4>
                     </div>
-                    <div id="definicion-img"></div>
+                    <div class="tp-score">
+                        <p>CPU</p>
+                        <p id="cpu-score"></p>
+                        <p id="cpu-dir"></p>
+                    </div>
+                </div>
+                <div id="arco">
+                    <div id="arco-lado-1" class="arco-lado"><span class="ncelda">1</span></div>
+                    <div id="arco-lado-2" class="arco-lado"><span class="ncelda">2</span></div>
+                    <div id="arco-lado-3" class="arco-lado"><span class="ncelda">3</span></div>
+                    <div id="arco-lado-4" class="arco-lado"><span class="ncelda">4</span></div>
+                    <div id="arco-lado-5" class="arco-lado"><span class="ncelda">5</span></div>
+                    <div id="arco-lado-6" class="arco-lado"><span class="ncelda">6</span></div>
+                </div>
+                <br>
+                <button id="btn-easy">EASY</button>
+                <button id="btn-reset">RESET</button>
+                <button id="btn-hard">HARD</button>
+                <br>
+
+                <div id="definicion" class="definicion">
+                    <div class="estadistica-box">
+                        <div class="estadistica">
+                            <span>Números <span id="name-player"></span></span>
+                            <p id="numHuman"></p>
+                        </div>
+                        <div class="estadistica">
+                            <span>Numeros CPU</span>
+                            <p id="numCpu"></p>
+
+                        </div>
+                    </div>
 
                 </div>
-
 
             </section>
             <hr>
             <section class="game-gallery">
                 <div class="game-box">
-                    <div class="game-img"><a href="t3_en_raya.html"><img src="https://picsum.photos/200"
+                    <div class="game-img"><a href="t3_en_raya.html"><img src="https://picsum.photos/200/150"
                                 alt="Imagen del juego 3 en raya"></a></div>
-                    <div class="info">
+                    <div class="game-desc">
                         <h3 class="game-title"><a href="t3_en_raya.html">3 EN RAYA</a></h3>
+                        <hr class="game-line">
                         <p class="game-info">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab, id veniam
                             incidunt</p>
+                        <code>HTML # lines: </code><br>
+                        <code>CSS # lines: </code><br>
+                        <code>JS # lines: </code><br>
                     </div>
                 </div>
                 <div class="game-box">
-                    <div class="game-img"><a href="tiro_penal.html"><img width="200px" src="../image/tiro_penal.jpg" 
-                        alt="Imagen del juego Tiro Penal"></a></div>
-                    <div class="info">
+                    <div class="game-img"><a href="tiro_penal.html"><img width="200px" src="../image/tiro_penal.jpg"
+                                alt="Imagen del juego Tiro Penal"></a></div>
+                    <div class="game-desc">
                         <h3 class="game-title"><a href="tiro_penal.html">TIRO PENAL</a></h3>
-                        <p class="game-info">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab, id veniam
-                            incidunt</p>
+                        <hr class="game-line">
+                        <p class="game-info">Trata de ganarle a la maquina pateando penales. Podras?</p>
+                        <code>HTML # lines: </code><br>
+                        <code>CSS # lines: </code><br>
+                        <code>JS # lines: </code><br>
                     </div>
                 </div>
                 <div class="game-box">
-                    <div class="game-img"><img src="https://picsum.photos/200" alt=""></div>
-                    <div class="info">
-                        <h3 class="game-title">TITULO DEL JUEGO</h3>
+                    <div class="game-img"><img src="https://picsum.photos/200/150" alt=""></div>
+                    <div class="game-desc">
+                        <h3 class="game-title"><a href="tiro_penal.html">JUEGO 3</a></h3>
+                        <hr class="game-line">
                         <p class="game-info">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab, id veniam
                             incidunt</p>
+                        <code>HTML # lines: </code><br>
+                        <code>CSS # lines: </code><br>
+                        <code>JS # lines: </code><br>
                     </div>
                 </div>
                 <div class="game-box">
-                    <div class="game-img"><img src="https://picsum.photos/200" alt=""></div>
-                    <div class="info">
-                        <h3 class="game-title">TITULO DEL JUEGO</h3>
+                    <div class="game-img"><img src="https://picsum.photos/200/150" alt=""></div>
+                    <div class="game-desc">
+                        <h3 class="game-title"><a href="tiro_penal.html">JUEGO 4</a></h3>
+                        <hr class="game-line">
                         <p class="game-info">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab, id veniam
                             incidunt</p>
+                        <code>HTML # lines: </code><br>
+                        <code>CSS # lines: </code><br>
+                        <code>JS # lines: </code><br>
                     </div>
                 </div>
-            </section>
+            </section>>
         </main>
         <footer>
             <div class="logo">LOGO DE OCIOJS</div>

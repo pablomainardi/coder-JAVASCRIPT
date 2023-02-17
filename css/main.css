@@ -1,40 +1,99 @@
+:root {
+    --verdeMain: rgb(40, 90, 40);
+    --negro15: rgb(15, 15, 15);
+    --verdeFuente: #583;
+    --blanco: #ffffff;
+    --lineaBlanca: #bbb;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+}
+
 * {
     text-align: center;
 }
 
-a {
-    text-decoration: none;
+body {
+    /*background: linear-gradient(#999, #222);*/
+    background: linear-gradient(var(--verdeMain),
+            var(--negro15) 50%);
 }
 
 header,
 nav,
 main,
 footer {
-    width: 100%;
+
+    overflow-x: hidden;
 }
+
+a {
+    text-decoration: none;
+    color: var(--blanco);
+}
+
+
+/*HEADER*/
 
 header {
-    border: 2px solid #7bf;
+
+    height: 13vh;
+    display: flex;
+    border-bottom: 2px solid #aaa;
+
+    color: var(--blanco);
+    align-items: center;
 }
 
+.banner {
+    font-size: 28px;
+    margin-left: 20px;
+    margin-top: 8px;
+}
 
+.spanllaves {
+ line-height: 0;
+    font-size: 100px;
+}
 
 .nav-link {
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
     list-style: none;
 }
 
 .nav-link li {
-    margin: 3px 10px;
-    padding: 8px;
+    margin: 3px 5px;
+    padding: 7px;
 }
 
-footer {
-    border: 2px solid #7bf;
+.nav-link a {
+    padding: 5%;
+    transition: .2s;
+
 }
+
+.nav-link a:hover {
+    transition: .2s;
+    border-bottom: 1px solid #fff;
+    text-shadow: var(--negro15) 0px 25px;
+
+
+}
+
+/*MAIN*/
 
 main {
+    margin: 0 auto;
+    color: var(--verdeFuente)
+}
+
+main>p {
+    width: 50%;
     margin: 0 auto;
 }
 
@@ -43,24 +102,77 @@ main {
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
+    min-height: 500px;
 }
 
 .game-box {
     width: 250px;
-    height: 350px;
     margin: 20px;
+    border: 1px solid var(--blanco);
+    background: repeating-linear-gradient(57deg,
+            var(--verdeMain),
+            var(--negro15) 50%);
+    transition: .2s;
+    border-radius: 2%;
+    box-shadow: var(--verdeFuente) 0px 8px 8px;
+}
+
+.game-box:hover {
+    box-shadow: #5f3 0px 14px 14px;
+    transform: scale(1.01);
+    transition: .2s;
+}
+
+.game-img {
+    margin-top: 10%;
+}
+
+.game-img img {
+    border-radius: 2%;
+}
+
+.game-line {
+
+    width: 70%;
+    color: var(--lineaBlanca);
+    border-radius: 50%;
+}
+
+.game-desc {
+    padding: 0 7% 7%;
+}
+
+code {
+    color: var(--blanco);
+}
+
+/*FOOTER*/
+
+footer {
+    /*    background: linear-gradient(
+        rgb(15, 15, 15) ,
+        rgb(40, 90, 40)50% 
+    );*/
+    color: var(--blanco);
+    margin-top: 5px;
+
 }
 
 
-/*3 EN RAYA*/
 
+/*JUEGO ACTIVO VENTANA*/
 
 .game-active {
-    width: 100%;
-    height: max-content;
-    background-color: #292;
+
+    margin: 20px auto;
+    border: 8px solid #ffff;
+    background-color: rgb(0, 70, 2);
+    width: 90%;
+    /* height: 70vh; */
 
 }
+
+/*3 EN RAYA*/
 
 .t3a-info {
     font-size: 25px;
@@ -96,85 +208,118 @@ main {
 
 /* TIRO PENAL */
 
-.tp-game {
+.resultado {
+    display: flex;
+    margin: 0 auto;
+    justify-content: space-evenly;
+}
 
-    height: 600px;
+.tp-score {
+   
+font-weight: 900;
+    font-size: 27px;
+}
 
+.tp-score-separador {
+    font-size: 35px;
+    color: #fff;
+    margin: auto 0;
 }
 
 #arco {
-      display: grid;
+    display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    margin: 0 auto;
-    width: max-content;
-    height: 100%x;
+    margin: 10px auto;
+    width: 100%;
+    justify-items: center;
+ 
+    min-width: 260px;
+    min-height: 180px;
+    max-width: 900px;
+    max-height: 450px;
 }
+span {font-size: 20px;
+    font-weight: 500;
+    color: white;
 
+    }
 .arco-lado {
-    border: 5px solid yellow;
-    width: 165px;
-    height: 140px;
+    border: 2px solid yellow;
+    width: 100%;
     font-size: 30px;
     color: #fff;
+    background-size: cover;
+    background-position: center;
+    height:200px;
+    
 }
 
 #arco-lado-1 {
     background-image: url(../image/tiro_penal/arco-vacio-1a.png);
-    background-size: cover;
+
 }
 
 #arco-lado-2 {
     background-image: url(../image/tiro_penal/arco-vacio-1b.png);
-    background-size: cover;
+
 }
 
 #arco-lado-3 {
     background-image: url(../image/tiro_penal/arco-vacio-1c.png);
-    background-size: cover;
 
 }
 
 #arco-lado-4 {
     background-image: url(../image/tiro_penal/arco-vacio-2a.png);
-    background-size: cover;
-
+    ;
 }
 
 #arco-lado-5 {
     background-image: url(../image/tiro_penal/arco-vacio-2b.png);
-    background-size: cover;
 
 }
 
 #arco-lado-6 {
     background-image: url(../image/tiro_penal/arco-vacio-2c.png);
-    background-size: cover;
 
 }
 
-.definicion {
+.ncelda {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 40px;
+    font-weight: 900;
+    color: #222;
+   background: repeating-linear-gradient(
+    10deg,
+white 2%,
+black 7%,
+white 11%,
+black 15%
+   );
+}
+
+button {
+    background-color: #777;
+    padding: 7px;
+    font-weight: 500;
+    border: 1px solid var(--lineaBlanca);
+    margin: 0 10px;
+}
+
+button:first-of-type {
+    background-color: #3a6;
+}
+
+.estadistica-box {
+    padding: 5px;
+    border:1px solid white;
+    justify-content: space-evenly;
+}
+.estadistica {
+    width: 100%;
     display: flex;
-    justify-content: center;
+    font-size: 16px;
+    flex-wrap: wrap;
+    margin: 2px;
+    overflow-wrap: normal;
 }
-
-.tp-score {
-    margin: 15px;
-    padding: 10px;
-    border: 3px solid #fff;
-    font-size: 30px;
-}
-
-.tp-score-separador {
-    font-size: 35px;
-color:#fff;
-margin: auto  0  ;
-}
-
-#definicion-title {
-    font-size: 35px;
-    color: #fff;
-    padding: 10px;
-    margin:10px;
-    
-}
-
