@@ -15,6 +15,8 @@ let cpuScore = 0;
 
 let namePlayer = prompt("Ingresa tu nombre o apodo");
 
+let numNameHuman = namePlayer;
+
 // Lados del arco
 let lado1 = document.getElementById("arco-lado-1");
 let lado2 = document.getElementById("arco-lado-2");
@@ -24,8 +26,11 @@ let lado5 = document.getElementById("arco-lado-5");
 let lado6 = document.getElementById("arco-lado-6");
 
 
-let nCeldas = document.getElementsByClassName("ncelda");
+//  let nCeldas = document.getElementsByClassName("ncelda"); **span con numeros de los lados **
+
+
 document.getElementById("name-player").innerHTML = namePlayer.toUpperCase();
+document.getElementById("numNameH").innerHTML = numNameHuman.toUpperCase();
 document.getElementById("cpu-score").innerHTML = cpuScore;
 document.getElementById("human-score").innerHTML = humanScore;
 
@@ -60,7 +65,7 @@ function modoHardPenalEjecutado(direc) {
 
     if (randomEasy6 >= 4) {
         document.getElementById("cpu-score").innerHTML = ++cpuScore;
-        document.getElementById("cpu-dir").innerHTML = "Gool!";
+        document.getElementById("cpu-dir").innerHTML = "Atajada!";
         document.getElementById("human-dir").innerHTML = ":-(";
 
 

@@ -14,3 +14,18 @@ function respuestaConocimiento() {
 respuestaConocimiento();
 
 */
+
+let cataVerde = document.getElementById("botonverde");
+let cataNegro = document.getElementById("botonnegro");
+let catafondo = document.getElementById("fondo");
+let catatablas = document.getElementById("tablas");
+
+cataVerde.addEventListener("click", () => {
+    catafondo.style.backgroundColor = "green";
+    catafondo.style.borderColor = "green"
+})
+
+cataNegro.addEventListener("click", () => {
+    catafondo.style.backgroundColor = "black";
+    catafondo.style.borderColor = "black"
+})

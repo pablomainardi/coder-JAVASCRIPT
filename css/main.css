@@ -23,14 +23,6 @@ body {
             var(--negro15) 50%);
 }
 
-header,
-nav,
-main,
-footer {
-
-    overflow-x: hidden;
-}
-
 a {
     text-decoration: none;
     color: var(--blanco);
@@ -44,29 +36,31 @@ header {
     height: 13vh;
     display: flex;
     border-bottom: 2px solid #aaa;
-
+justify-content: space-between;
     color: var(--blanco);
     align-items: center;
 }
 
 .banner {
-    font-size: 28px;
+    font-size: 23px;
     margin-left: 20px;
     margin-top: 8px;
 }
 
 .spanllaves {
  line-height: 0;
-    font-size: 100px;
+    font-size: 50px;
 }
 
 .nav-link {
     display: flex;
-    justify-content: flex-end;
+    
     list-style: none;
+    flex-wrap: wrap;
 }
 
 .nav-link li {
+    justify-content: flex-end;
     margin: 3px 5px;
     padding: 7px;
 }
@@ -212,6 +206,7 @@ footer {
     display: flex;
     margin: 0 auto;
     justify-content: space-evenly;
+    line-height: 0.2;
 }
 
 .tp-score {
@@ -220,11 +215,7 @@ font-weight: 900;
     font-size: 27px;
 }
 
-.tp-score-separador {
-    font-size: 35px;
-    color: #fff;
-    margin: auto 0;
-}
+
 
 #arco {
     display: grid;
@@ -235,8 +226,8 @@ font-weight: 900;
  
     min-width: 260px;
     min-height: 180px;
-    max-width: 900px;
-    max-height: 450px;
+    max-width: 800px;
+    max-height: 410px;
 }
 span {font-size: 20px;
     font-weight: 500;
@@ -250,7 +241,7 @@ span {font-size: 20px;
     color: #fff;
     background-size: cover;
     background-position: center;
-    height:200px;
+    height:11rem;
     
 }
 
@@ -322,4 +313,49 @@ button:first-of-type {
     flex-wrap: wrap;
     margin: 2px;
     overflow-wrap: normal;
+}
+
+
+
+/*PRUEBAS CON CATA*/
+
+#fondo {
+    background-color: #555;
+    color: white;
+    width: 700px;
+    height: 200px;
+    border: 5px solid white;
+    margin: 20px auto;
+    
+}
+
+#tablas {
+    background-color: #bbb;
+    color: #111;
+    width: 700px;
+    height: max-content;
+    border: 5px solid white;
+    margin: 5px auto;
+}
+
+/*
+<input type="text" name="tabla" id="tabla">
+<input type="submit" name="tabla" id="btntab"> 
+*/
+
+#tabla {
+ padding: 10px;
+ 
+ font-size: 25px;
+ border:2px solid white;
+
+
+}
+
+#btntab {
+    padding: 10px;
+  
+    font-size: 25px;
+    background-color: #3a6;
+
 }
