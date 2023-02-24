@@ -1,8 +1,3 @@
-// TIRO PENAL - INFO **
-document.querySelector("#tiropenalhtml").innerHTML += "<strong>35</strong>";
-document.querySelector("#tiropenalcss").innerHTML += "<strong>103</strong>";
-document.querySelector("#tiropenaljs").innerHTML += "<strong>167</strong>";
-
 
 // ESTABLECIENDO VARIABLES PARA COLOR DE FONDO **
 const rootCss = document.querySelector(":root");
