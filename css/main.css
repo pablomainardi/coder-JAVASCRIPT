@@ -1,9 +1,17 @@
 :root {
-    --verdeMain: rgb(40, 90, 40);
-    --negro15: rgb(15, 15, 15);
-    --verdeFuente: #583;
-    --blanco: #ffffff;
-    --lineaBlanca: #bbb;
+    --fuente1: #ffffff;
+    --fuente2: #959595;
+    --bg1: #000000;
+    --bg2: #212121;
+    --luzbox: #bbbbbb;
+
+    /*
+    --fuente1: #ffffff;
+    --fuente2: #558833;
+    --bg1: #285A28;
+    --bg2:#0F0F0F ; 
+    --luzbox: #55ff33;
+    */
 }
 
 html,
@@ -19,13 +27,13 @@ body {
 
 body {
     /*background: linear-gradient(#999, #222);*/
-    background: linear-gradient(var(--verdeMain),
-            var(--negro15) 50%);
+    background: linear-gradient(var(--bg1),
+            var(--bg2) 50%);
 }
 
 a {
     text-decoration: none;
-    color: var(--blanco);
+    color: var(--fuente1);
 }
 
 
@@ -36,8 +44,8 @@ header {
     height: 13vh;
     display: flex;
     border-bottom: 2px solid #aaa;
-justify-content: space-between;
-    color: var(--blanco);
+    justify-content: space-between;
+    color: var(--fuente1);
     align-items: center;
 }
 
@@ -48,13 +56,14 @@ justify-content: space-between;
 }
 
 .spanllaves {
- line-height: 0;
-    font-size: 50px;
+    line-height: 0;
+    font-size: 60px;
+    color: var(--fuente2);
 }
 
 .nav-link {
     display: flex;
-    
+
     list-style: none;
     flex-wrap: wrap;
 }
@@ -73,17 +82,17 @@ justify-content: space-between;
 
 .nav-link a:hover {
     transition: .2s;
-    border-bottom: 1px solid #fff;
-    text-shadow: var(--negro15) 0px 25px;
+    border-bottom: 1px solid var(--fuente2);
+    text-shadow: var(--luzbox) 0px 25px;
 
 
 }
 
-/*MAIN*/
+/****MAIN****/
 
 main {
     margin: 0 auto;
-    color: var(--verdeFuente)
+    color: var(--fuente2)
 }
 
 main>p {
@@ -102,17 +111,17 @@ main>p {
 .game-box {
     width: 250px;
     margin: 20px;
-    border: 1px solid var(--blanco);
+    border: 1px solid var(--fuente1);
     background: repeating-linear-gradient(57deg,
-            var(--verdeMain),
-            var(--negro15) 50%);
+            var(--bg1),
+            var(--bg2) 50%);
     transition: .2s;
     border-radius: 2%;
-    box-shadow: var(--verdeFuente) 0px 8px 8px;
+    box-shadow: var(--luzbox) 0px 8px 8px;
 }
 
 .game-box:hover {
-    box-shadow: #5f3 0px 14px 14px;
+    box-shadow: var(--luzbox) 0px 14px 14px;
     transform: scale(1.01);
     transition: .2s;
 }
@@ -128,7 +137,7 @@ main>p {
 .game-line {
 
     width: 70%;
-    color: var(--lineaBlanca);
+    color: var(--luzBox);
     border-radius: 50%;
 }
 
@@ -137,8 +146,89 @@ main>p {
 }
 
 code {
-    color: var(--blanco);
+    color: var(--fuente1);
 }
+
+.rst3px {
+    padding: 3px;
+    margin: 3px;
+    letter-spacing: 1px;
+}
+
+.cambiarcolor {
+    width: 70%;
+    padding: 10px;
+    margin: 0 auto;
+    border-left: 1px solid var(--fuente1);
+    border-right: 1px solid var(--fuente1);
+
+}
+
+.colorBox {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.colorBox div {
+    display: flex;
+    flex-direction: column;
+    width: 70px;
+}
+
+.prederbox code {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-evenly;
+    padding-bottom: 10px;
+}
+
+.btncolor {
+    margin: 15px auto;
+    padding: 7px;
+    width: max-content;
+    border-radius: 25%;
+}
+
+.pickColor {
+    height: 60px;
+    width: 60px;
+    border-radius: 100%;
+    padding: 7px;
+    margin: auto;
+}
+
+.pickColor::-webkit-color-swatch {
+    border: none;
+    border-radius: 100%;
+
+
+
+}
+
+#fuente1 {
+    background-color: var(--fuente1);
+}
+
+#fuente2 {
+    background-color: var(--fuente2);
+}
+
+#bg1 {
+    background-color: var(--bg1);
+}
+
+#bg2 {
+    background-color: var(--bg2);
+}
+
+#luzbox {
+    background-color: var(--luzbox);
+}
+
+
 
 /*FOOTER*/
 
@@ -147,20 +237,20 @@ footer {
         rgb(15, 15, 15) ,
         rgb(40, 90, 40)50% 
     );*/
-    color: var(--blanco);
+    color: var(--fuente1);
     margin-top: 5px;
 
 }
 
 
 
-/*JUEGO ACTIVO VENTANA*/
+/* VENTANA DEL JUEGO ACTIVO */
 
 .game-active {
 
     margin: 20px auto;
     border: 8px solid #ffff;
-    background-color: rgb(0, 70, 2);
+    background-color: var(--bg1);
     width: 90%;
     /* height: 70vh; */
 
@@ -201,7 +291,6 @@ footer {
 
 
 /* TIRO PENAL */
-
 .resultado {
     display: flex;
     margin: 0 auto;
@@ -210,12 +299,9 @@ footer {
 }
 
 .tp-score {
-   
-font-weight: 900;
+    font-weight: 900;
     font-size: 27px;
 }
-
-
 
 #arco {
     display: grid;
@@ -223,17 +309,19 @@ font-weight: 900;
     margin: 10px auto;
     width: 100%;
     justify-items: center;
- 
+
     min-width: 260px;
     min-height: 180px;
     max-width: 800px;
     max-height: 410px;
 }
-span {font-size: 20px;
+
+span {
+    font-size: 20px;
     font-weight: 500;
     color: white;
+}
 
-    }
 .arco-lado {
     border: 2px solid yellow;
     width: 100%;
@@ -241,38 +329,31 @@ span {font-size: 20px;
     color: #fff;
     background-size: cover;
     background-position: center;
-    height:11rem;
-    
+    height: 11rem;
 }
 
 #arco-lado-1 {
     background-image: url(../image/tiro_penal/arco-vacio-1a.png);
-
 }
 
 #arco-lado-2 {
     background-image: url(../image/tiro_penal/arco-vacio-1b.png);
-
 }
 
 #arco-lado-3 {
     background-image: url(../image/tiro_penal/arco-vacio-1c.png);
-
 }
 
 #arco-lado-4 {
     background-image: url(../image/tiro_penal/arco-vacio-2a.png);
-    ;
 }
 
 #arco-lado-5 {
     background-image: url(../image/tiro_penal/arco-vacio-2b.png);
-
 }
 
 #arco-lado-6 {
     background-image: url(../image/tiro_penal/arco-vacio-2c.png);
-
 }
 
 .ncelda {
@@ -280,21 +361,20 @@ span {font-size: 20px;
     font-size: 40px;
     font-weight: 900;
     color: #222;
-   background: repeating-linear-gradient(
-    10deg,
-white 2%,
-black 7%,
-white 11%,
-black 15%
-   );
+    background: repeating-linear-gradient(10deg,
+            white 2%,
+            black 7%,
+            white 11%,
+            black 15%);
 }
 
 button {
     background-color: #777;
     padding: 7px;
     font-weight: 500;
-    border: 1px solid var(--lineaBlanca);
+    border: 1px solid #ccc;
     margin: 0 10px;
+    margin-bottom: 10px;
 }
 
 button:first-of-type {
@@ -303,9 +383,10 @@ button:first-of-type {
 
 .estadistica-box {
     padding: 5px;
-    border:1px solid white;
+    border: 1px solid white;
     justify-content: space-evenly;
 }
+
 .estadistica {
     width: 100%;
     display: flex;
@@ -313,49 +394,4 @@ button:first-of-type {
     flex-wrap: wrap;
     margin: 2px;
     overflow-wrap: normal;
-}
-
-
-
-/*PRUEBAS CON CATA*/
-
-#fondo {
-    background-color: #555;
-    color: white;
-    width: 700px;
-    height: 200px;
-    border: 5px solid white;
-    margin: 20px auto;
-    
-}
-
-#tablas {
-    background-color: #bbb;
-    color: #111;
-    width: 700px;
-    height: max-content;
-    border: 5px solid white;
-    margin: 5px auto;
-}
-
-/*
-<input type="text" name="tabla" id="tabla">
-<input type="submit" name="tabla" id="btntab"> 
-*/
-
-#tabla {
- padding: 10px;
- 
- font-size: 25px;
- border:2px solid white;
-
-
-}
-
-#btntab {
-    padding: 10px;
-  
-    font-size: 25px;
-    background-color: #3a6;
-
 }

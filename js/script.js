@@ -1,31 +1,90 @@
-/*
+// TIRO PENAL - INFO **
+document.querySelector("#tiropenalhtml").innerHTML += "<strong>35</strong>";
+document.querySelector("#tiropenalcss").innerHTML += "<strong>103</strong>";
+document.querySelector("#tiropenaljs").innerHTML += "<strong>167</strong>";
 
-let nombre = prompt("OcioJS te da la bienvenida!, cual es tu nombre?");
 
-function respuestaConocimiento() {
-    let tieneConocimiento = prompt('Hola ' + nombre + ', te invitamos a aprender jugando!. Tienes conocimientos en HTML, CSS o JS ?')
-    if (tieneConocimiento == "si" || tieneConocimiento == "SI" || tieneConocimiento == "Si") {
-        alert("Buenisimo! puedes visitar nuestra seccion de codigo y personalizacion!");
-    } else {
-          alert("No hay problema! Igualmente puedes jugar a estos juegos que fueron hechos con esas tecnologias");
-        }
+// ESTABLECIENDO VARIABLES PARA COLOR DE FONDO **
+const rootCss = document.querySelector(":root");
+const btnCambiarColor = document.querySelector("#btncambiarcolor");
+const btnResetColor = document.querySelector("#btnresetcolor");
+
+let fuente1;
+let fuente2;
+let bg1;
+let bg2;
+let luzBox;
+
+
+// FUNCION PARA APLICAR LOS COLORES SELECCIONADOS**
+
+function aplicarColor() {
+
+    fuente1 = document.querySelector("#fuente1").value;
+    fuente2 = document.querySelector("#fuente2").value;
+    bg1 = document.querySelector("#bg1").value;
+    bg2 = document.querySelector("#bg2").value;
+    luzBox = document.querySelector("#luzbox").value;
+
+    rootCss.style.setProperty('--fuente1', fuente1);
+    rootCss.style.setProperty('--fuente2', fuente2);
+    rootCss.style.setProperty('--bg1', bg1);
+    rootCss.style.setProperty('--bg2', bg2);
+    rootCss.style.setProperty('--luzbox', luzBox);
 }
 
-respuestaConocimiento();
-
+/*
+// INFO EN CONSOLA DE COLORES PREVIOS **
+console.log(fuente1);
+console.log(fuente2);
+console.log(bg1);
+console.log(bg2);
+console.log(luzBox);
 */
 
-let cataVerde = document.getElementById("botonverde");
-let cataNegro = document.getElementById("botonnegro");
-let catafondo = document.getElementById("fondo");
-let catatablas = document.getElementById("tablas");
-
-cataVerde.addEventListener("click", () => {
-    catafondo.style.backgroundColor = "green";
-    catafondo.style.borderColor = "green"
+// BOTON DE INICIAR EL CAMBIO DE COLOR **
+btnCambiarColor.addEventListener("click", () => {
+    aplicarColor();
+    console.log("------------------------")
+    console.log("Color de la fuente 1: " + fuente1);
+    console.log("Color de la fuente 2: " + fuente2);
+    console.log("Color del fondo 1: " + bg1);
+    console.log("Color del fondo 2: " + bg2);
+    console.log("Color de la luz led: " + luzBox);
+    // console.log(luzBox);
 })
 
-cataNegro.addEventListener("click", () => {
-    catafondo.style.backgroundColor = "black";
-    catafondo.style.borderColor = "black"
+
+
+// FUNCION PARA RESETEAR COLOR
+function resetColor() {
+    
+    rootCss.style.setProperty('--fuente1', "#ffffff");
+    document.querySelector("#fuente1").value = "#ffffff";
+    
+    rootCss.style.setProperty('--fuente2', "#959595");
+    document.querySelector("#fuente2").value = "#959595";
+
+    rootCss.style.setProperty('--bg1', "#000000");
+    document.querySelector("#bg1").value = "#000000";
+
+    rootCss.style.setProperty('--bg2', "#212121");
+    document.querySelector("#bg2").value = "#212121";
+
+    rootCss.style.setProperty('--luzbox', "#bbbbbb");
+    document.querySelector("#luzbox").value = "#bbbbbb";
+}
+
+
+// BOTON RESET COLOR
+btnResetColor.addEventListener("click", () => {
+    resetColor();
+
 })
+
+
+
+
+
+
+
