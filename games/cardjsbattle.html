@@ -27,42 +27,99 @@
         </header>
         <main>
             <section class="game-active">
-                <div class="t3a-info">
-                    <h3> vs CPU</h3>
-                    <div id="t3a-score" class="t3a-score">*resultado*</div>
+
+                <div id="container-box" class="container-box">
+                    <div class="btn-portada-inicio">
+                        <button id="btn-portada-inicio">INICIAR</button>
+                    </div>
+                    <div id="flex-1" class="container-flex flex-1">
+                        <div class="flex1-items flex1-items-1">ELIGE TU CARTA</div>
+                        <div class="flex1-items flex1-items-2">
+                            <div class="f1-i2-cartaimg">
+                                <img id="f1-i1-img1" src="./cardjsbattle/carta1.jpg" alt="Imagen carta 1">
+                            </div>
+                            <div class="f1-i2-cartaimg">
+                                <img id="f1-i1-img2" src="./cardjsbattle/carta2.jpg" alt="Imagen carta 2">
+                            </div>
+                            <div class="f1-i2-cartaimg">
+                                <img id="f1-i1-img3" src="./cardjsbattle/carta3.jpg" alt="Imagen carta 3">
+                            </div>
+                            <div class="f1-i2-cartaimg">
+                                <img id="f1-i1-img4" src="./cardjsbattle/carta4.jpg" alt="Imagen carta 4">
+                            </div>
+                            <div class="f1-i2-cartaimg">
+                                <img id="f1-i1-img5" src="./cardjsbattle/carta5.jpg" alt="Imagen carta 5">
+                            </div>
+                            <div class="f1-i2-cartaimg">
+                                <img id="f1-i1-img6" src="./cardjsbattle/carta6.jpg" alt="Imagen carta 6">
+                            </div>
+                        </div>
+                        <div class="flex1-items flex1-items-3" id="nombrecarta">NOMBRE DE TU CARTA</div>
+                        
+                        <div class="flex1-items flex1-items-4">
+                            <div id="f1-i4-imgcarta"></div>
+                            <div class="div-skill">
+                                <code id="skillVida" class="d-skill"></code>
+                                <code id="skillAtaque" class="d-skill"></code>
+                                <code id="skillVelocidad" class="d-skill"></code>
+                                <code id="skillDefensa" class="d-skill"></code>
+                                <code id="skillClase" class="d-skill"></code>
+                            </div>
+                        </div>
+            <div class="flex1-items flex1-items-5">
+            
+                <button class="btn-volver" id="btnaportada">ATRAS</button>
+                <button id="irbatalla" class="btn-batalla">SIGUIENTE</button>
+        
+                
+            </div>
+                    </div>
+
+
+                    <div id="flex-2" class="container-flex flex-2">
+                        <div class="flex2-items flex2-items-1">SELECCIONA TU ATAQUE</div>
+                        <div class="flex2-items flex2-items-2"><button>ATAQUE 1</button> <button>ATAQUE
+                                2</button><button>ATAQUE 3</button></div>
+                        <div class="flex2-items flex2-items-3">SELECCIONA TU DEFENSA</div>
+                        <div class="flex2-items flex2-items-4"><button>ATAQUE 1</button> <button>ATAQUE
+                                2</button><button>DEFENSA 3</button></div>
+                        <div class="flex2-items flex2-items-5">
+                            <div class="f2-i5-col1"></div>
+                            <div class="f2-i5-col2">RONDA 1 <BR> <BUTTon>INICIAR BATALLA</BUTTon></div>
+                            <div class="f2-i5-col3"></div>
+                        </div>
+                        <div class="flex2-items flex2-items-6">
+                            <div class="f2-i6-col1"><img id="cartaele" src="" alt=""></div>
+                            <div class="f2-i6-col2">ROUND 1 <BR>GANADOR NOMBRE</BR></div>
+                            <div class="f2-i6-col3"><img id="cartaopo" src="" alt=""></div>
+                        </div>
+                        <div class="flex2-items flex2-items-7">
+                            <div class="f2-i7-col1">LISTA DE RESUMEN DE LA PELEA DATOS DE MI CARTA</div>
+                            <div class="f2-i7-col2">RESUMEN DEL ROUND</div>
+                            <div class="f2-i7-col3">LISTA DE RESUMEN DE LA PELEA DATOS DE LA CARTA DEL OPONENTE</div>
+                        </div>
+                        <div class="flex2-items flex2-items-8">
+                            <button>SIGUIENTE ROUND</button> <button id="volverinicio">ATRAS</button>
+                        </div>
+                    </div>
+
+
                 </div>
-                <br>
-                <div class="t3a-table">
-                    <button id="t3a-cell-1" class="t3a-cell"></button>
-                    <button id="t3a-cell-2" class="t3a-cell"></button>
-                    <button id="t3a-cell-3" class="t3a-cell"></button>
-                    <button id="t3a-cell-4" class="t3a-cell"></button>
-                    <button id="t3a-cell-5" class="t3a-cell"></button>
-                    <button id="t3a-cell-6" class="t3a-cell"></button>
-                    <button id="t3a-cell-7" class="t3a-cell"></button>
-                    <button id="t3a-cell-8" class="t3a-cell"></button>
-                    <button id="t3a-cell-9" class="t3a-cell"></button>
-                </div>
-                <br>
+
+
 
             </section>
-
-
-
-
-
-
 
             <section class="game-gallery">
                 <div class="game-box">
                     <div class="game-img">
-                        <a href="t3_en_raya.html">
+                        <a href="cardjsbattle.html">
                             <img src="https://picsum.photos/200/150" alt="Imagen del juego 3 en raya">
                         </a>
                     </div>
                     <div class="game-desc">
-                        <a href="t3_en_raya.html">
-                            <h3 class="game-title">3 EN RAYA</h3>
+                        <a href="cardjsbattle.html">
+                            <h3 class="game-title">Card JS Battle</h3>
                         </a>
                         <hr class="game-line">
                         <p class="game-info">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab, id veniam
@@ -138,7 +195,7 @@
                     <div class="colorBox">
                         <div>
                             <label for="fuente1">Fuente 1</label>
-                            <input class="pickColor" type="color" value="#ffffff" id="fuente1">
+                            <input class="pickColor" type="color" value="#28A43d" id="fuente1">
                         </div>
                         <div>
                             <label for="fuente2">Fuente 2</label>
@@ -163,7 +220,7 @@
                     <div class="prederbox">
                         <h3 class="rst3px">Predeterminado</h5>
                             <code>
-                                <div><p>#ffffff;</p></div>
+                                <div><p>#28A43d;</p></div>
                                 <div><p>#959595;</p></div>
                                 <div><p>#000000;</p></div>
                                 <div><p>#212121</p></div>
@@ -180,7 +237,7 @@
         </footer>
     </div>
     <script src="../js/script.js"></script>
-    <script src="../js/games/tiro_penal.js"></script>
+    <script src="../js/games/cardjsbattle.js"></script>
 </body>
 
 </html>

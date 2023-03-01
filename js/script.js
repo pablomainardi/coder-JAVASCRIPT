@@ -54,8 +54,8 @@ btnCambiarColor.addEventListener("click", () => {
 // FUNCION PARA RESETEAR COLOR
 function resetColor() {
     
-    rootCss.style.setProperty('--fuente1', "#ffffff");
-    document.querySelector("#fuente1").value = "#ffffff";
+    rootCss.style.setProperty('--fuente1', "#28A43d");
+    document.querySelector("#fuente1").value = "#28A43d";
     
     rootCss.style.setProperty('--fuente2', "#959595");
     document.querySelector("#fuente2").value = "#959595";

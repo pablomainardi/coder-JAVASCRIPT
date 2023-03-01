@@ -35,13 +35,13 @@ document.getElementById("human-score").innerHTML = humanScore;
 numH = [];
 numC = [];
 function numeroH() {
-    if (numH.length >= 45) {
-        numH.splice(0, 25)
+    if (numH.length >= 30) {
+        numH.splice(0, 30)
     }
 }
 function numeroC() {
-    if (numC.length >= 45) {
-        numC.splice(0, 25);
+    if (numC.length >= 30) {
+        numC.splice(0, 30);
     }
 }
 

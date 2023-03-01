@@ -29,31 +29,19 @@
 
 
             <section class="game-active">
-
-                <div class="resultado">
-                    <div class="tp-score" id="local-score">
-                        <p id="name-player"></p>
-                        <p id="human-score"></p>
-                        <p id="human-dir"></p>
+                <div class="battle-container">
+                    <div class="resultado">
+                        <div class="tp-score" id="local-score">
+                            <p id="name-player"></p>
+                            <p id="human-score"></p>
+                            <p id="human-dir"></p>
+                        </div>
+                        <div class="tp-score">
+                            <p>CPU</p>
+                            <p id="cpu-score"></p>
+                            <p id="cpu-dir"></p>
+                        </div>
                     </div>
-                    <div class="tp-score">
-                        <p>CPU</p>
-                        <p id="cpu-score"></p>
-                        <p id="cpu-dir"></p>
-                    </div>
-                </div>
-                <div id="arco">
-                    <div id="arco-lado-1" class="arco-lado"><span class="ncelda">1</span></div>
-                    <div id="arco-lado-2" class="arco-lado"><span class="ncelda">2</span></div>
-                    <div id="arco-lado-3" class="arco-lado"><span class="ncelda">3</span></div>
-                    <div id="arco-lado-4" class="arco-lado"><span class="ncelda">4</span></div>
-                    <div id="arco-lado-5" class="arco-lado"><span class="ncelda">5</span></div>
-                    <div id="arco-lado-6" class="arco-lado"><span class="ncelda">6</span></div>
-                </div>
-                <button id="btn-easy">EASY</button>
-                <button id="btn-reset">RESET</button>
-                <button id="btn-hard">HARD</button>
-                <div id="definicion" class="definicion">
                     <div class="estadistica-box">
                         <div class="estadistica">
                             <span>Tiradas <span id="numNameH"></span></span>
@@ -64,7 +52,25 @@
                             <p id="numCpu"></p>
                         </div>
                     </div>
+                    <div class="boxjuego">
+                        <div id="arco">
+                            <div id="arco-lado-1" class="arco-lado"><span class="ncelda">1</span></div>
+                            <div id="arco-lado-2" class="arco-lado"><span class="ncelda">2</span></div>
+                            <div id="arco-lado-3" class="arco-lado"><span class="ncelda">3</span></div>
+                            <div id="arco-lado-4" class="arco-lado"><span class="ncelda">4</span></div>
+                            <div id="arco-lado-5" class="arco-lado"><span class="ncelda">5</span></div>
+                            <div id="arco-lado-6" class="arco-lado"><span class="ncelda">6</span></div>
+                        </div>
+                        <div class="btn-tiro-penal">
+                            <button class="btn-style btn-style-1" id="btn-easy">EASY</button>
+                            <button class=" btn-style-1" id="btn-reset">RESET</button>
+                            <button class=" btn-style-1" id="btn-hard">HARD</button>
+                        </div>
+
+                    </div>
+                       
                 </div>
+
             </section>
 
 
@@ -75,13 +81,13 @@
             <section class="game-gallery">
                 <div class="game-box">
                     <div class="game-img">
-                        <a href="t3_en_raya.html">
+                        <a href="cardjsbattle.html">
                             <img src="https://picsum.photos/200/150" alt="Imagen del juego 3 en raya">
                         </a>
                     </div>
                     <div class="game-desc">
-                        <a href="t3_en_raya.html">
-                            <h3 class="game-title">3 EN RAYA</h3>
+                        <a href="cardjsbattle.html">
+                            <h3 class="game-title">Cards JS Battle</h3>
                         </a>
                         <hr class="game-line">
                         <p class="game-info">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab, id veniam
@@ -157,7 +163,7 @@
                     <div class="colorBox">
                         <div>
                             <label for="fuente1">Fuente 1</label>
-                            <input class="pickColor" type="color" value="#ffffff" id="fuente1">
+                            <input class="pickColor" type="color" value="#28A43d" id="fuente1">
                         </div>
                         <div>
                             <label for="fuente2">Fuente 2</label>
@@ -172,8 +178,8 @@
                             <input class="pickColor" type="color" value="#212121" id="bg2">
                         </div>
                         <div>
-                            <label for="luzbox">Luz Led</label>
-                            <input class="pickColor" type="color" value="#bbbbbb" id="luzbox">
+                            < <label for="luzbox">Luz Led</label>
+                                <input class="pickColor" type="color" value="#bbbbbb" id="luzbox">
                         </div>
 
                     </div>
@@ -182,7 +188,7 @@
                     <div class="prederbox">
                         <h3 class="rst3px">Predeterminado</h5>
                             <code>
-                                <div><p>#ffffff;</p></div>
+                                <div><p>#28A43d;</p></div>
                                 <div><p>#959595;</p></div>
                                 <div><p>#000000;</p></div>
                                 <div><p>#212121</p></div>
