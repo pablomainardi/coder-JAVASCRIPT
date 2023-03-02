@@ -7,6 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>OcioJs - Tiro Penal</title>
     <link rel="stylesheet" href="../css/main.css">
+    <script defer src="../js/script.js"></script>
+    <script defer src="../js/games/cardjsbattle.js"></script>
 </head>
 
 <body>
@@ -78,20 +80,25 @@
 
                     <div id="flex-2" class="container-flex flex-2">
                         <div class="flex2-items flex2-items-1">SELECCIONA TU ATAQUE</div>
-                        <div class="flex2-items flex2-items-2"><button>ATAQUE 1</button> <button>ATAQUE
-                                2</button><button>ATAQUE 3</button></div>
+                        <div class="flex2-items flex2-items-2">
+                            <button id="btn-ata-1">ATAQUE 1</button> 
+                            <button id="btn-ata-2">ATAQUE 2</button>
+                            <button id="btn-ata-3">ATAQUE 3</button>
+                            </div>
                         <div class="flex2-items flex2-items-3">SELECCIONA TU DEFENSA</div>
                         <div class="flex2-items flex2-items-4"><button>ATAQUE 1</button> <button>ATAQUE
                                 2</button><button>DEFENSA 3</button></div>
                         <div class="flex2-items flex2-items-5">
-                            <div class="f2-i5-col1"></div>
-                            <div class="f2-i5-col2">RONDA 1 <BR> <BUTTon>INICIAR BATALLA</BUTTon></div>
-                            <div class="f2-i5-col3"></div>
+                            <div id="f2-i5-col1">NOMBRE DE MI CARTA</div>
+                            <div class="f2-i5-col2">RONDA 1
+                                <button id="iniciarbatalla">INICIAR BATALLA</button>
+                            </div>
+                            <div id="f2-i5-col3"><img src="./cardjsbattle/interrogacion.jpg" alt="carta random del rival"></div>
                         </div>
                         <div class="flex2-items flex2-items-6">
-                            <div class="f2-i6-col1"><img id="cartaele" src="" alt=""></div>
-                            <div class="f2-i6-col2">ROUND 1 <BR>GANADOR NOMBRE</BR></div>
-                            <div class="f2-i6-col3"><img id="cartaopo" src="" alt=""></div>
+                            <div class="f2-i6-col1"></div>
+                            <div id="resultado" class="f2-i6-col2">ROUND 1 <BR>GANADOR NOMBRE</BR></div>
+                            <div class="f2-i6-col3"></div>
                         </div>
                         <div class="flex2-items flex2-items-7">
                             <div class="f2-i7-col1">LISTA DE RESUMEN DE LA PELEA DATOS DE MI CARTA</div>
@@ -236,8 +243,7 @@
             <div class="copyright">Creado por Pablo Mainardi</div>
         </footer>
     </div>
-    <script src="../js/script.js"></script>
-    <script src="../js/games/cardjsbattle.js"></script>
+  
 </body>
 
 </html>
