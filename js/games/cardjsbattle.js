@@ -19,7 +19,9 @@ const etapa2 = document.getElementById("flex-2");
 // IR A ETAPA UNO - BTN INICIAR **
 function irEtapa1() {
     btnIrEtapa1.style.display = "none";
-    etapa1.style.display = "block";
+
+
+    etapa1.style.display = "flex";
 
 };
 
@@ -31,7 +33,7 @@ btnIrEtapa1.addEventListener("click", () => {
 function irPortada() {
     etapa1.style.display = "none";
     etapa2.style.display = "none";
-    btnIrEtapa1.style.display = "block";
+    btnIrEtapa1.style.display = "flex";
 }
 
 btnIrPortada.addEventListener("click", () => {
@@ -41,7 +43,8 @@ btnIrPortada.addEventListener("click", () => {
 // IR A ETAPA 2 - BTN IR A BATALLA **
 function irEtapa2() {
     etapa1.style.display = "none";
-    etapa2.style.display = "block";
+    etapa2.style.display = "flex";
+    btnIrEtapa1.style.display = "none";
     cartasElegida();
     cartaRivalInicial();
 
@@ -56,7 +59,7 @@ btnIrEtapa2.addEventListener("click", () => {
 // VOLVER A INICIO - BTN VOLVERINICIO **
 function volverInicio() {
     etapa2.style.display = "none";
-    etapa1.style.display = "block";
+    etapa1.style.display = "flex";
 
 }
 
