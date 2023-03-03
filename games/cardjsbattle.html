@@ -37,27 +37,27 @@
                     <div id="flex-1" class="container-flex flex-1">
                         <div class="flex1-items flex1-items-1">ELIGE TU CARTA</div>
                         <div class="flex1-items flex1-items-2">
-                            <div class="f1-i2-cartaimg">
-                                <img id="f1-i1-img1" src="./cardjsbattle/carta1.jpg" alt="Imagen carta 1">
+                            <div id="f1-i1-img1" class="f1-i2-cartaimg">
+                                <img src="./cardjsbattle/carta1.jpg" alt="Imagen carta 1">
                             </div>
-                            <div class="f1-i2-cartaimg">
-                                <img id="f1-i1-img2" src="./cardjsbattle/carta2.jpg" alt="Imagen carta 2">
+                            <div id="f1-i1-img2" class="f1-i2-cartaimg">
+                                <img src="./cardjsbattle/carta2.jpg" alt="Imagen carta 2">
                             </div>
-                            <div class="f1-i2-cartaimg">
-                                <img id="f1-i1-img3" src="./cardjsbattle/carta3.jpg" alt="Imagen carta 3">
+                            <div id="f1-i1-img3" class="f1-i2-cartaimg">
+                                <img src="./cardjsbattle/carta3.jpg" alt="Imagen carta 3">
                             </div>
-                            <div class="f1-i2-cartaimg">
-                                <img id="f1-i1-img4" src="./cardjsbattle/carta4.jpg" alt="Imagen carta 4">
+                            <div id="f1-i1-img4" class="f1-i2-cartaimg">
+                                <img src="./cardjsbattle/carta4.jpg" alt="Imagen carta 4">
                             </div>
-                            <div class="f1-i2-cartaimg">
-                                <img id="f1-i1-img5" src="./cardjsbattle/carta5.jpg" alt="Imagen carta 5">
+                            <div id="f1-i1-img5" class="f1-i2-cartaimg">
+                                <img src="./cardjsbattle/carta5.jpg" alt="Imagen carta 5">
                             </div>
-                            <div class="f1-i2-cartaimg">
-                                <img id="f1-i1-img6" src="./cardjsbattle/carta6.jpg" alt="Imagen carta 6">
+                            <div id="f1-i1-img6" class="f1-i2-cartaimg">
+                                <img src="./cardjsbattle/carta6.jpg" alt="Imagen carta 6">
                             </div>
                         </div>
                         <div class="flex1-items flex1-items-3" id="nombrecarta">NOMBRE DE TU CARTA</div>
-                        
+
                         <div class="flex1-items flex1-items-4">
                             <div id="f1-i4-imgcarta"></div>
                             <div class="div-skill">
@@ -68,37 +68,60 @@
                                 <code id="skillClase" class="d-skill"></code>
                             </div>
                         </div>
-            <div class="flex1-items flex1-items-5">
-            
-                <button class="btn-volver" id="btnaportada">ATRAS</button>
-                <button id="irbatalla" class="btn-batalla">SIGUIENTE</button>
-        
-                
-            </div>
+                        <div class="flex1-items flex1-items-5">
+
+                            <button class="btn-volver" id="btnaportada">ATRAS</button>
+                            <button id="irbatalla" class="btn-batalla">SIGUIENTE</button>
+
+
+                        </div>
                     </div>
 
 
                     <div id="flex-2" class="container-flex flex-2">
                         <div class="flex2-items flex2-items-1">SELECCIONA TU ATAQUE</div>
                         <div class="flex2-items flex2-items-2">
-                            <button id="btn-ata-1">ATAQUE 1</button> 
+                            <button id="btn-ata-1">ATAQUE 1</button>
                             <button id="btn-ata-2">ATAQUE 2</button>
                             <button id="btn-ata-3">ATAQUE 3</button>
-                            </div>
+                        </div>
                         <div class="flex2-items flex2-items-3">SELECCIONA TU DEFENSA</div>
-                        <div class="flex2-items flex2-items-4"><button>ATAQUE 1</button> <button>ATAQUE
-                                2</button><button>DEFENSA 3</button></div>
+                        <div class="flex2-items flex2-items-4">
+                            <button id="btn-def-1">DEFENSA 1</button>
+                            <button id="btn-def-2">DEFENSA 2</button>
+                            <button id="btn-def-3">DEFENSA 3</button>
+                        </div>
                         <div class="flex2-items flex2-items-5">
                             <div id="f2-i5-col1">NOMBRE DE MI CARTA</div>
-                            <div class="f2-i5-col2">RONDA 1
+                            <div class="f2-i5-col2">1
                                 <button id="iniciarbatalla">INICIAR BATALLA</button>
                             </div>
-                            <div id="f2-i5-col3"><img src="./cardjsbattle/interrogacion.jpg" alt="carta random del rival"></div>
+                            <div id="f2-i5-col3"><img src="./cardjsbattle/interrogacion.jpg"
+                                    alt="carta random del rival"></div>
                         </div>
                         <div class="flex2-items flex2-items-6">
-                            <div class="f2-i6-col1"></div>
-                            <div id="resultado" class="f2-i6-col2">ROUND 1 <BR>GANADOR NOMBRE</BR></div>
-                            <div class="f2-i6-col3"></div>
+                            <div class="boxlocal">
+                                <div class="div-skill f2-i6-col1">
+                                    <code id="miSkillVida" class="d-skill"></code>
+                                    <code id="miSkillAtaque" class="d-skill"></code>
+                                    <code id="miSkillVelocidad" class="d-skill"></code>
+                                    <code id="miSkillDefensa" class="d-skill"></code>
+                                    <code id="miSkillClase" class="d-skill"></code>
+                                </div>
+                            </div>
+
+
+                            <div class="boxrival">
+                                <div class="div-skill f2-i6-col3">
+                                    
+                                    <code id="rivalSkillVida" class="d-skill"></code>
+                                    <code id="rivalSkillAtaque" class="d-skill"></code>
+                                    <code id="rivalSkillVelocidad" class="d-skill"></code>
+                                    <code id="rivalSkillDefensa" class="d-skill"></code>
+                                    <code id="rivalSkillClase" class="d-skill"></code>
+                                </div>
+                            </div>
+
                         </div>
                         <div class="flex2-items flex2-items-7">
                             <div class="f2-i7-col1">LISTA DE RESUMEN DE LA PELEA DATOS DE MI CARTA</div>
@@ -243,7 +266,7 @@
             <div class="copyright">Creado por Pablo Mainardi</div>
         </footer>
     </div>
-  
+
 </body>
 
 </html>
