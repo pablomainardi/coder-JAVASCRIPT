@@ -373,21 +373,18 @@ miAtaRes = miCarta.ataque - cartaRival.defensa;
      ;
 
         if (miAtaRes > 0){
-miCarta.vida - miAtaRes
-HabilidadesVivoRival(cartaRival)
-        txtFinal.innerHTML = "GOLPE EFECTIVO, TU RIVAL PERDIO " + miAtaRes;
+cartaRival.vida - miAtaRes;
 
+        txtFinal.innerHTML = "GOLPE EFECTIVO, TU RIVAL PERDIO " + miAtaRes;
     }else{
+miCarta.vida - miAtaRes;
+
         txtFinal.innerHTML = "PERDISTE " + miAtaRes + " puntos de vida.";
-HabilidadesVivoRival(cartaRival);
-misHabilidadesVivo(miCarta);
     }
 
     
     if (miDefRes > 0) {
-        cartaRival.vida - miDefRes;
-misHabilidadesVivo(miCarta);
-        HabilidadesVivoRival(cartaRival);
+        cartaRival.vida - miDefRes;  
         txtFinal.innerHTML = "DEFENSA EFECTIVA, TU RIVAL PERDIO " + miDefRes + " puntos de vida.";
 }else{
     miCarta.vida - miAtaRes;
@@ -402,7 +399,8 @@ txtFinal.innerHTML = "PERDISTE " + miDefRes + " puntos de vida.";
 iniciarBatalla.addEventListener("click", () => {
 
     resultado();
-
+HabilidadesVivoRival(cartaRival);
+misHabilidadesVivo(miCarta);
 })
 
 //DIVIDIR EN FUNCIONES
