@@ -317,7 +317,7 @@ btnAta2.addEventListener("click", () => {
     ataque2(miCarta);
     misHabilidadesVivo(miCarta);
     
-})g
+})
 
 btnAta3.addEventListener("click", () => {
     btnAta3.classList.add("boton-activado");
@@ -388,6 +388,10 @@ txtFinal.innerHTML = "PERDISTE " + miDefRes + " puntos de vida.";
 If (cartaRival.vida <= 0) { 
 txtfinal.innerHTML += "GANASTE!";
  }
+    
+ habilidadesVivoRival(cartaRival);
+
+misHabilidadesVivo(miCarta);   
 }
 
 
@@ -398,8 +402,7 @@ iniciarBatalla.addEventListener("click", () => {
 miAtaRes = miAtaque - cartaRival.defensa;
     miDefRes = miDefensa - cartaRival.ataque;
     resultado();
-habilidadesVivoRival(cartaRival);
-misHabilidadesVivo(miCarta);
+
 })
 
 //DIVIDIR EN FUNCIONES
