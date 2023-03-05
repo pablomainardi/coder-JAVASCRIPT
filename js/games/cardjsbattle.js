@@ -6,7 +6,7 @@ const btnIrPortada = document.getElementById("btnaportada");
 const btnIrEtapa2 = document.getElementById("irbatalla");
 const btnVolverInicio = document.getElementById("volverinicio");
 // FONDO PARA LA PORTADA **
-const irPortada = document.getElementById("container-box");
+const portada = document.getElementById("container-box");
 // FONDO ETAPA 1 **
 const etapa1 = document.getElementById("flex-1");
 // FONDO ETAPA 2 **
