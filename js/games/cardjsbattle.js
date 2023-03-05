@@ -346,8 +346,7 @@ btnDef2.addEventListener("click", () => {
     btnDef3.classList.remove("boton-activado");
     defensa2(miCarta);
     misHabilidadesVivo(miCarta);
-    alert("def2");
-})
+    
 
 btnDef3.addEventListener("click", () => {
     btnDef3.classList.add("boton-activado");
