@@ -366,28 +366,32 @@ let miDefRes;
 let txtFinal = document.querySelector("#txtfinal");
 
 function resultado() {
-
-    miAtaRes = miCarta.ataque - cartaRival.defensa;
+miAtaRes = miCarta.ataque - cartaRival.defensa;
     miDefRes = miCarta.defensa - cartaRival.ataque;
+       
 
+     ;
 
-   
-        cartaRival.vida - miAtaRes;
-        HabilidadesVivoRival(cartaRival);
         if (miAtaRes > 0){
-        txtFinal.innerHTML = "GOLPE EFECTIVO "
+miCarta.vida - miAtaRes
+HabilidadesVivoRival(cartaRival)
+        txtFinal.innerHTML = "GOLPE EFECTIVO, TU RIVAL PERDIO " + miAtaRes;
 
     }else{
-        miCarta.vida - miAtaRes
+        txtFinal.innerHTML = "PERDISTE " + miAtaRes + " puntos de vida.";
+HabilidadesVivoRival(cartaRival);
+misHabilidadesVivo(miCarta);
     }
 
     
     if (miDefRes > 0) {
         cartaRival.vida - miDefRes;
+misHabilidadesVivo(miCarta);
         HabilidadesVivoRival(cartaRival);
-        txtFinal.innerHTML = "LE GANASTE A " + cartaRival;
+        txtFinal.innerHTML = "DEFENSA EFECTIVA, TU RIVAL PERDIO " + miDefRes + " puntos de vida.";
 }else{
-    miCarta.vida - miAtaRes
+    miCarta.vida - miAtaRes;
+txtFinal.innerHTML = "PERDISTE " + miDefRes + " puntos de vida.";
 }
 }
 
