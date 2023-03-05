@@ -45,7 +45,7 @@ function irEtapa2() {
     cartasElegida();
     cartaRivalInicial();
     misHabilidadesVivo(miCarta);
-    HabilidadesVivoRival(cartaRival);
+    habilidadesVivoRival(cartaRival);
     
 
 };
@@ -216,7 +216,7 @@ divRival.addEventListener("click", () => {
     divRival.innerHTML = mazo[indiceRandom].img;
     divRival.innerHTML += mazo[indiceRandom].nombre;
     cartaRival = mazo[indiceRandom]
-    HabilidadesVivoRival(cartaRival);
+    habilidadesVivoRival(cartaRival);
 })
 
 
@@ -247,7 +247,7 @@ function misHabilidadesVivo(i) {
     document.querySelector("#miSkillClase").innerHTML = "CLASE........." + i.clase;
 }
 
-function HabilidadesVivoRival(i) {
+function habilidadesVivoRival(i) {
     document.querySelector("#rivalSkillVida").innerHTML = "VIDA............" + i.vida;
     document.querySelector("#rivalSkillAtaque").innerHTML = "ATAQUE..........." + i.ataque;
     document.querySelector("#rivalSkillVelocidad").innerHTML = "VELOCIDAD......." + i.velocidad;
@@ -317,7 +317,7 @@ btnAta2.addEventListener("click", () => {
     ataque2(miCarta);
     misHabilidadesVivo(miCarta);
     
-})
+})g
 
 btnAta3.addEventListener("click", () => {
     btnAta3.classList.add("boton-activado");
@@ -346,7 +346,7 @@ btnDef2.addEventListener("click", () => {
     btnDef3.classList.remove("boton-activado");
     defensa2(miCarta);
     misHabilidadesVivo(miCarta);
-    
+})    
 
 btnDef3.addEventListener("click", () => {
     btnDef3.classList.add("boton-activado");
@@ -398,7 +398,7 @@ iniciarBatalla.addEventListener("click", () => {
 miAtaRes = miAtaque - cartaRival.defensa;
     miDefRes = miDefensa - cartaRival.ataque;
     resultado();
-HabilidadesVivoRival(cartaRival);
+habilidadesVivoRival(cartaRival);
 misHabilidadesVivo(miCarta);
 })
 
