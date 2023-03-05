@@ -361,26 +361,35 @@ btnDef3.addEventListener("click", () => {
 // COMANZAR / INICIAR BATALLA
 const iniciarBatalla = document.querySelector("#iniciarbatalla");
 
-let miAtaRes;
-let miDefRes;
+function miAtaRes() {
+    miAtaque - cartaRival.defensa;
+}
+function miDefRes() {
+    miCarta.defensa - cartaRival.ataque;
+};
+
+
 let txtFinal = document.querySelector("#txtfinal");
+
+/*
+let miAtaque = null;
+let miDefensa = null;
+
+let ataqueRival = null;
+let defensaRival = null;
+*/
 
 function resultado() {
 
-    miAtaRes = miCarta.ataque - cartaRival.defensa;
-    miDefRes = miCarta.defensa - cartaRival.ataque;
+    miAtaRes()
+    miDefRes()
 
-
-   
-        cartaRival.vida - miAtaRes;
-        HabilidadesVivoRival(cartaRival);
         if (miAtaRes > 0){
         txtFinal.innerHTML = "GOLPE EFECTIVO "
-
+        HabilidadesVivoRival(cartaRival);
     }else{
         miCarta.vida - miAtaRes
     }
-
     
     if (miDefRes > 0) {
         cartaRival.vida - miDefRes;
@@ -390,10 +399,6 @@ function resultado() {
     miCarta.vida - miAtaRes
 }
 }
-
-
-
-
 
 iniciarBatalla.addEventListener("click", () => {
 
