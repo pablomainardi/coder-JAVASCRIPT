@@ -307,7 +307,7 @@ btnAta1.addEventListener("click", () => {
     btnAta2.classList.remove("boton-activado");
     btnAta3.classList.remove("boton-activado");
     ataque1(miCarta);
-    
+    misHabilidadesVivo(miCarta);
 })
 
 btnAta2.addEventListener("click", () => {
@@ -315,7 +315,7 @@ btnAta2.addEventListener("click", () => {
     btnAta1.classList.remove("boton-activado");
     btnAta3.classList.remove("boton-activado");
     ataque2(miCarta);
-    
+    misHabilidadesVivo(miCarta);
     
 })
 
@@ -324,7 +324,7 @@ btnAta3.addEventListener("click", () => {
     btnAta2.classList.remove("boton-activado");
     btnAta1.classList.remove("boton-activado");
     ataque3(miCarta);
-    
+    misHabilidadesVivo(miCarta);
     
 })
 
@@ -335,7 +335,8 @@ btnDef1.addEventListener("click", () => {
     btnDef2.classList.remove("boton-activado");
     btnDef3.classList.remove("boton-activado");
     defensa1(miCarta);
-    
+    misHabilidadesVivo(miCarta);
+
     
 })
 
@@ -344,8 +345,8 @@ btnDef2.addEventListener("click", () => {
     btnDef1.classList.remove("boton-activado");
     btnDef3.classList.remove("boton-activado");
     defensa2(miCarta);
-    
-    
+    misHabilidadesVivo(miCarta);
+    alert("def2");
 })
 
 btnDef3.addEventListener("click", () => {
@@ -353,7 +354,7 @@ btnDef3.addEventListener("click", () => {
     btnDef2.classList.remove("boton-activado");
     btnDef1.classList.remove("boton-activado");
     defensa3(miCarta);
-    
+    misHabilidadesVivo(miCarta);
     
 })
 
