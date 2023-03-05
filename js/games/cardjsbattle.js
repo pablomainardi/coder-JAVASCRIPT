@@ -6,7 +6,7 @@ const btnIrPortada = document.getElementById("btnaportada");
 const btnIrEtapa2 = document.getElementById("irbatalla");
 const btnVolverInicio = document.getElementById("volverinicio");
 // FONDO PARA LA PORTADA **
-const portada = document.getElementById("container-box");
+const irPortada = document.getElementById("container-box");
 // FONDO ETAPA 1 **
 const etapa1 = document.getElementById("flex-1");
 // FONDO ETAPA 2 **
@@ -133,7 +133,7 @@ function miCartaPresentacion() {
 }
 
 function mostrarHab(i) {
-    document.querySelector("#skillVida").innerHTML = "VIDA............" + i.vida;
+    document.querySelector("#skillVida").innerHTML = "VIDA............." + i.vida;
     document.querySelector("#skillAtaque").innerHTML = "ATAQUE..........." + i.ataque;
     document.querySelector("#skillVelocidad").innerHTML = "VELOCIDAD......." + i.velocidad;
     document.querySelector("#skillDefensa").innerHTML = "DEFENSA........." + i.defensa;
