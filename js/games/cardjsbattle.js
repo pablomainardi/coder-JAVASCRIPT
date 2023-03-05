@@ -367,11 +367,6 @@ let miDefRes;
 let txtFinal = document.querySelector("#txtfinal");
 
 function resultado() {
-miAtaRes = miCarta.ataque - cartaRival.defensa;
-    miDefRes = miCarta.defensa - cartaRival.ataque;
-       
-
-     ;
 
         if (miAtaRes > 0){
 cartaRival.vida - miAtaRes;
@@ -391,6 +386,9 @@ miCarta.vida - miAtaRes;
     miCarta.vida - miAtaRes;
 txtFinal.innerHTML = "PERDISTE " + miDefRes + " puntos de vida.";
 }
+If (cartaRival.vida <= 0) { 
+txtfinal.innerHTML += "GANASTE!";
+ }
 }
 
 
@@ -398,7 +396,8 @@ txtFinal.innerHTML = "PERDISTE " + miDefRes + " puntos de vida.";
 
 
 iniciarBatalla.addEventListener("click", () => {
-
+miAtaRes = miAtaque - cartaRival.defensa;
+    miDefRes = miDefensa - cartaRival.ataque;
     resultado();
 HabilidadesVivoRival(cartaRival);
 misHabilidadesVivo(miCarta);
