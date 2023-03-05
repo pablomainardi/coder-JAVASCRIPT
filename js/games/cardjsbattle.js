@@ -45,8 +45,8 @@ function irEtapa2() {
     cartasElegida();
     cartaRivalInicial();
     misHabilidadesVivo(miCarta);
-    HabilidadesVivoRival(cartaRival);
-    
+    habilidadesVivoRival(cartaRival);
+
 
 };
 
@@ -133,7 +133,7 @@ function miCartaPresentacion() {
 }
 
 function mostrarHab(i) {
-    document.querySelector("#skillVida").innerHTML = "VIDA............" + i.vida;
+    document.querySelector("#skillVida").innerHTML = "VIDA............." + i.vida;
     document.querySelector("#skillAtaque").innerHTML = "ATAQUE..........." + i.ataque;
     document.querySelector("#skillVelocidad").innerHTML = "VELOCIDAD......." + i.velocidad;
     document.querySelector("#skillDefensa").innerHTML = "DEFENSA........." + i.defensa;
@@ -216,7 +216,7 @@ divRival.addEventListener("click", () => {
     divRival.innerHTML = mazo[indiceRandom].img;
     divRival.innerHTML += mazo[indiceRandom].nombre;
     cartaRival = mazo[indiceRandom]
-    HabilidadesVivoRival(cartaRival);
+    habilidadesVivoRival(cartaRival);
 })
 
 
@@ -238,7 +238,7 @@ let miDefensa = null;
 let ataqueRival = null;
 let defensaRival = null;
 
-//mostrar habilidades en vivo
+//mostrar Habilidades en vivo
 function misHabilidadesVivo(i) {
     document.querySelector("#miSkillVida").innerHTML = "VIDA............" + i.vida;
     document.querySelector("#miSkillAtaque").innerHTML = "ATAQUE..........." + i.ataque;
@@ -247,7 +247,7 @@ function misHabilidadesVivo(i) {
     document.querySelector("#miSkillClase").innerHTML = "CLASE........." + i.clase;
 }
 
-function HabilidadesVivoRival(i) {
+function habilidadesVivoRival(i) {
     document.querySelector("#rivalSkillVida").innerHTML = "VIDA............" + i.vida;
     document.querySelector("#rivalSkillAtaque").innerHTML = "ATAQUE..........." + i.ataque;
     document.querySelector("#rivalSkillVelocidad").innerHTML = "VELOCIDAD......." + i.velocidad;
@@ -271,14 +271,14 @@ function rivalHabilidadesVivo(i) {
 function ataque1(paraQuien) {
     miAtaque = (paraQuien.ataque + paraQuien.velocidad);
     miDefensa = paraQuien.defensa
-    
-    
+
+
 }
 
 function ataque2(paraQuien) {
     miAtaque = (paraQuien.ataque + (paraQuien.velocidad / 2));
     miDefensa = (paraQuien.defensa + (paraQuien.velocidad / 2));
-    
+
 }
 
 function ataque3(paraQuien) {
@@ -307,7 +307,7 @@ btnAta1.addEventListener("click", () => {
     btnAta2.classList.remove("boton-activado");
     btnAta3.classList.remove("boton-activado");
     ataque1(miCarta);
-    
+    misHabilidadesVivo(miCarta);
 })
 
 btnAta2.addEventListener("click", () => {
@@ -315,8 +315,8 @@ btnAta2.addEventListener("click", () => {
     btnAta1.classList.remove("boton-activado");
     btnAta3.classList.remove("boton-activado");
     ataque2(miCarta);
-    
-    
+    misHabilidadesVivo(miCarta);
+
 })
 
 btnAta3.addEventListener("click", () => {
@@ -324,8 +324,8 @@ btnAta3.addEventListener("click", () => {
     btnAta2.classList.remove("boton-activado");
     btnAta1.classList.remove("boton-activado");
     ataque3(miCarta);
-    
-    
+    misHabilidadesVivo(miCarta);
+
 })
 
 //DEFENSA SELECCION **
@@ -335,8 +335,9 @@ btnDef1.addEventListener("click", () => {
     btnDef2.classList.remove("boton-activado");
     btnDef3.classList.remove("boton-activado");
     defensa1(miCarta);
-    
-    
+    misHabilidadesVivo(miCarta);
+
+
 })
 
 btnDef2.addEventListener("click", () => {
@@ -344,8 +345,7 @@ btnDef2.addEventListener("click", () => {
     btnDef1.classList.remove("boton-activado");
     btnDef3.classList.remove("boton-activado");
     defensa2(miCarta);
-    
-    
+    misHabilidadesVivo(miCarta);
 })
 
 btnDef3.addEventListener("click", () => {
@@ -353,8 +353,8 @@ btnDef3.addEventListener("click", () => {
     btnDef2.classList.remove("boton-activado");
     btnDef1.classList.remove("boton-activado");
     defensa3(miCarta);
-    
-    
+    misHabilidadesVivo(miCarta);
+
 })
 
 
@@ -381,27 +381,41 @@ let defensaRival = null;
 
 function resultado() {
 
-    miAtaRes()
-    miDefRes()
+    miAtaRes = miCarta.ataque - cartaRival.defensa;
+    miDefRes = miCarta.defensa - cartaRival.ataque;
 
-        if (miAtaRes > 0){
+    cartaRival.vida - miAtaRes;
+    habilidadesVivoRival(cartaRival);
+    if (miAtaRes > 0) {
         txtFinal.innerHTML = "GOLPE EFECTIVO "
-        HabilidadesVivoRival(cartaRival);
-    }else{
-        miCarta.vida - miAtaRes
+    } else {
+        miCarta.vida - miAtaRes;
+        txtFinal.innerHTML = "PERDISTE " + miAtaRes + " puntos de vida.";
     }
-    
+
+
     if (miDefRes > 0) {
         cartaRival.vida - miDefRes;
-        HabilidadesVivoRival(cartaRival);
-        txtFinal.innerHTML = "LE GANASTE A " + cartaRival;
-}else{
-    miCarta.vida - miAtaRes
-}
+        txtFinal.innerHTML = "DEFENSA EFECTIVA, TU RIVAL PERDIO " + miDefRes + " puntos de vida.";
+    } else {
+        miCarta.vida - miAtaRes;
+        txtFinal.innerHTML = "PERDISTE " + miDefRes + " puntos de vida.";
+    }
+
+
+    if (cartaRival.vida <= 0) {
+        txtFinal.innerHTML += "GANASTE!";
+    } else { "sigue sigue!" }
+
+    habilidadesVivoRival(cartaRival);
+    misHabilidadesVivo(miCarta);
+    document.querySelector("#mivida") = "Mi Vida = " + miCarta.vida;
+    document.querySelector("#vidarival") = "Vida Rival = " + cartaRival.vida;
 }
 
 iniciarBatalla.addEventListener("click", () => {
-
+    miAtaRes = miAtaque - cartaRival.defensa;
+    miDefRes = miDefensa - cartaRival.ataque;
     resultado();
 
 })
