@@ -238,7 +238,7 @@ let miDefensa = null;
 let ataqueRival = null;
 let defensaRival = null;
 
-//mostrar habilidades en vivo
+//mostrar Habilidades en vivo
 function misHabilidadesVivo(i) {
     document.querySelector("#miSkillVida").innerHTML = "VIDA............" + i.vida;
     document.querySelector("#miSkillAtaque").innerHTML = "ATAQUE..........." + i.ataque;
