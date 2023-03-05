@@ -387,7 +387,7 @@ txtFinal.innerHTML = "PERDISTE " + miDefRes + " puntos de vida.";
 }
 If (cartaRival.vida <= 0) { 
 txtfinal.innerHTML += "GANASTE!";
- }
+ }else {"sigue sigue!"}
     
  habilidadesVivoRival(cartaRival);
 
