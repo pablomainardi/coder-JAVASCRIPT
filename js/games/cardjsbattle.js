@@ -236,8 +236,19 @@ divRival.addEventListener("click", () => {
     cartaRival = mazo[indiceRandom]
     habilidadesVivoRival(cartaRival);
 vidaTotalRival.innerHTML = cartaRival.vida;
+divRival.removeEventListener();
 })
 
+const cambiarRival = document.querySelector("#cambiarRival");
+cambiarRival.addEventListener("click", () => {
+    sonidoRandom.play();
+    indiceRandom = Math.floor(Math.random() * 6);
+    divRival.innerHTML = mazo[indiceRandom].img;
+    divRival.innerHTML += mazo[indiceRandom].nombre;
+    cartaRival = mazo[indiceRandom]
+    habilidadesVivoRival(cartaRival);
+vidaTotalRival.innerHTML = cartaRival.vida;
+})
 
 /*******PREPARAR BATALLA********/
 // ***** miCarta ***** cartaRival ******
@@ -460,7 +471,7 @@ function resultado() {
     } else {
         miCarta.vida -= miAtaRes;
         
-        midLeft.innerHTML += "TU ATAQUE ME QUITO " +  miAtaRes + " PUNTOS DE VIDA";
+        midLeft.innerHTML = "TU ATAQUE ME QUITO " +  miAtaRes + " PUNTOS DE VIDA";
 
     }
 
@@ -473,7 +484,7 @@ function resultado() {
     } else {
         miCarta.vida - miDefRes;
         
-        midRight.innerHTML += "TU DEFENSA ME HA QUITADO " +  miDefRes + " PUNTOS DE VIDA";
+        midRight.innerHTML = "TU DEFENSA ME HA QUITADO " +  miDefRes + " PUNTOS DE VIDA";
 
     }
 }
