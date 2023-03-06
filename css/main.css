@@ -491,9 +491,9 @@ footer {
 
 }
 
-
-.f2-i5-col3 {
-    width: 100%;
+.center-btn {
+    display: flex;
+    justify-content: space-around;
 }
 
 
