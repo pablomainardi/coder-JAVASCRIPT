@@ -98,12 +98,12 @@ class Monstruos {
 //defensa();
 
 
-const carta1 = new Monstruos("Enrique", 100, 50, 30, 40, "Mago", '<img width="120px" src="./cardjsbattle/carta1.jpg" alt="imagen carta 1">');
-const carta2 = new Monstruos("Lidia", 80, 70, 70, 20, "Guerrero", '<img width="120px" src="./cardjsbattle/carta2.jpg" alt="imagen carta 2">');
-const carta3 = new Monstruos("Mario", 120, 40, 50, 60, "Guerrero", '<img width="120px" src="./cardjsbattle/carta3.jpg" alt="imagen carta 3">');
-const carta4 = new Monstruos("Eusevio", 90, 60, 40, 50, "Mago", '<img width="120px" src="./cardjsbattle/carta4.jpg" alt="imagen carta 4">');
-const carta5 = new Monstruos("Marcela", 110, 30, 60, 70, "Guerrero", '<img width="120px" src="./cardjsbattle/carta5.jpg" alt="imagen carta 5">');
-const carta6 = new Monstruos("Monica", 70, 80, 20, 30, "Mago", '<img width="120px" src="./cardjsbattle/carta6.jpg" alt="imagen carta 6">');
+const carta1 = new Monstruos("Enrique", 100, 50, 60, 40, "Ataque", '<img width="120px" src="./cardjsbattle/carta1.jpg" alt="imagen carta 1">');
+const carta2 = new Monstruos("Lidia", 80, 70, 70, 50, "Defensa", '<img width="120px" src="./cardjsbattle/carta2.jpg" alt="imagen carta 2">');
+const carta3 = new Monstruos("Mario", 120, 40, 50, 60, "Defensa", '<img width="120px" src="./cardjsbattle/carta3.jpg" alt="imagen carta 3">');
+const carta4 = new Monstruos("Eusevio", 90, 60, 40, 50, "Ataque", '<img width="120px" src="./cardjsbattle/carta4.jpg" alt="imagen carta 4">');
+const carta5 = new Monstruos("Marcela", 110, 70, 60, 70, "Defensa", '<img width="120px" src="./cardjsbattle/carta5.jpg" alt="imagen carta 5">');
+const carta6 = new Monstruos("Monica", 70, 80, 50, 50, "Ataque", '<img width="120px" src="./cardjsbattle/carta6.jpg" alt="imagen carta 6">');
 
 
 const mazo = [carta1, carta2, carta3, carta4, carta5, carta6];
