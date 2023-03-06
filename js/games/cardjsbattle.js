@@ -104,8 +104,6 @@ const carta3 = new Monstruos("Mario", 120, 40, 50, 60, "Defensa", '<img width="1
 const carta4 = new Monstruos("Eusevio", 90, 60, 40, 50, "Ataque", '<img width="120px" src="./cardjsbattle/carta4.jpg" alt="imagen carta 4">');
 const carta5 = new Monstruos("Marcela", 110, 70, 60, 70, "Defensa", '<img width="120px" src="./cardjsbattle/carta5.jpg" alt="imagen carta 5">');
 const carta6 = new Monstruos("Monica", 70, 80, 50, 50, "Ataque", '<img width="120px" src="./cardjsbattle/carta6.jpg" alt="imagen carta 6">');
-
-
 const mazo = [carta1, carta2, carta3, carta4, carta5, carta6];
 
 //ETAPA 1 -- ** ELECCION DE CARTA******** */
@@ -477,12 +475,12 @@ function resultado() {
 
 
     if (miDefRes > 0) {
-        cartaRival.vida - miDefRes;
+        cartaRival.vida -= miDefRes;
         
         midRight.innerHTML = "MI DEFENSA TE SACO " +  miDefRes + " PUNTOS DE VIDA";
       
     } else {
-        miCarta.vida - miDefRes;
+        miCarta.vida -= miDefRes;
         
         midRight.innerHTML = "TU DEFENSA ME HA QUITADO " +  miDefRes + " PUNTOS DE VIDA";
 
