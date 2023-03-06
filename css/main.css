@@ -319,7 +319,7 @@ footer {
 
 .boton-activado {
     background-color: #3a6;
-    border:2px solid #fff
+    border: 2px solid #fff
 }
 
 /*etapa 1*/
@@ -361,7 +361,7 @@ footer {
 }
 
 .f1-i2-cartaimg:hover {
-    filter:blur(0);
+    filter: blur(0);
 }
 
 
@@ -402,22 +402,26 @@ footer {
 
     display: flex;
     flex-direction: column;
-
-    padding: 15px;
-    border: 4px solid #cc922a;
+    border: 4px solid #bbb;
+    padding: 15px 4px;
+    border-radius: 15px;
 }
 
-.div-skill code {
+.d-skill {
     margin: 0 auto;
-
     font-size: 18px;
     font-weight: 400;
-    color: #171
+    color: #bbb
+}
+
+#d-skillE2 code {
+    font-size: 16px;
+    color: #222
 }
 
 .flex1-items-5 {
     margin: 15px auto 3px;
-    
+
 }
 
 
@@ -430,46 +434,178 @@ footer {
 
 /*etapa 2*/
 .flex-2 {
-    background-color: #995;
+    background: linear-gradient(90deg,
+            #523, #bbb, #523);
     display: none;
     height: max-content;
     min-height: 80vh;
     max-height: 100%;
+
+
 }
 
 .flex2-items {
-    border: 1px solid white;
+    margin: 5px auto;
+    font-size: 18px;
 }
 
 .flex2-items-5 {
     display: flex;
     justify-content: space-evenly;
-    align-items: center;
-    margin: 10px 20px;
 
-}
+    width: 100%;
 
-.f2-i5-col2 {
-    font-size: 3rem;
-    width: max-content;
-    height: 100%;
+
 }
 
 .flex2-items-5 div {
     display: flex;
     flex-direction: column;
-    margin: 0;
-    align-items: center;
+
 }
 
 .flex2-items-5 div img {
-    width: 150px;
+    width: 120px;
+    border-radius: 15px;
+    border: 2px solid #959595;
+    box-shadow: #959595 0px 0px 40px;
 }
+
+.f2-i5-col1 {
+    width: 100%;
+    min-width: 150px;
+}
+
+.f2-i5-col2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: max-content;
+    min-width: 80px;
+
+}
+
+.f2-i5-col2 span {
+    font-size: 35px;
+    font-weight: 700;
+
+}
+
+
+.f2-i5-col3 {
+    width: 100%;
+}
+
+
 
 .flex2-items-6 {
-    
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    width: 100%;
+    align-items: center;
+
 }
 
+.box-btn-iniciar {
+    width: 100%;
+    padding-bottom: 8px;
+}
+
+.box-btn-iniciar button {
+    height: 50px;
+    border-radius: 50%;
+}
+
+
+.flex2-items-7 {
+
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+}
+
+
+.f2-i7-col1 {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.f2-i7-col2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: stretch;
+
+}
+
+.f2-i7-col2>div {
+    width: 70px;
+    min-width: 60px;
+    max-width: 100px;
+    height: 35px;
+   font-weight: 800;
+    margin: 5px;
+    padding: 5px;
+    font-size: 18px;
+  
+}
+
+.f2-i7-col3 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.globodato {
+    width: 100%;
+    min-width: 50px;
+    max-width: 200px;
+    height: 30px;
+    background-color: #bbb;
+    border: solid 4px #111;
+    margin: 5px;
+    padding: 5px;
+    border-radius: 25px;
+    font-weight: 900;
+    font-size: 25px;
+}
+
+.vidadato {
+    width: 100%;
+    min-width: 70px;
+    max-width: 200px;
+    height: 40px;
+    background-color: #bbb;
+    border: solid 4px #111;
+    margin: 5px;
+    padding: 5px;
+    border-radius: 25px;
+    font-weight: 900;
+    font-size: 40px;
+}
+
+.flex2-items-8  {
+    height: 35px;
+    width: 85%;
+display: flex;
+justify-content: space-evenly;
+margin: 15px auto;
+   
+}
+
+
+
+
+
+
+/*
 .boxlocal {
 
 }

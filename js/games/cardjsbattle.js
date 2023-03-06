@@ -43,7 +43,6 @@ function irEtapa2() {
     etapa2.style.display = "flex";
     btnIrEtapa1.style.display = "none";
     cartasElegida();
-    cartaRivalInicial();
     misHabilidadesVivo(miCarta);
     habilidadesVivoRival(cartaRival);
 
@@ -86,12 +85,12 @@ class Monstruos {
 //defensa();
 
 
-const carta1 = new Monstruos("Enrique", 100, 50, 30, 40, "Mago", '<img src="./cardjsbattle/carta1.jpg" alt="imagen carta 1">');
-const carta2 = new Monstruos("Lidia", 80, 70, 70, 20, "Guerrero", '<img src="./cardjsbattle/carta2.jpg" alt="imagen carta 2">');
-const carta3 = new Monstruos("Mario", 120, 40, 50, 60, "Guerrero", '<img src="./cardjsbattle/carta3.jpg" alt="imagen carta 3">');
-const carta4 = new Monstruos("Eusevio", 90, 60, 40, 50, "Mago", '<img src="./cardjsbattle/carta4.jpg" alt="imagen carta 4">');
-const carta5 = new Monstruos("Marcela", 110, 30, 60, 70, "Guerrero", '<img src="./cardjsbattle/carta5.jpg" alt="imagen carta 5">');
-const carta6 = new Monstruos("Monica", 70, 80, 20, 30, "Mago", '<img src="./cardjsbattle/carta6.jpg" alt="imagen carta 6">');
+const carta1 = new Monstruos("Enrique", 100, 50, 30, 40, "Mago", '<img width="120px" src="./cardjsbattle/carta1.jpg" alt="imagen carta 1">');
+const carta2 = new Monstruos("Lidia", 80, 70, 70, 20, "Guerrero", '<img width="120px" src="./cardjsbattle/carta2.jpg" alt="imagen carta 2">');
+const carta3 = new Monstruos("Mario", 120, 40, 50, 60, "Guerrero", '<img width="120px" src="./cardjsbattle/carta3.jpg" alt="imagen carta 3">');
+const carta4 = new Monstruos("Eusevio", 90, 60, 40, 50, "Mago", '<img width="120px" src="./cardjsbattle/carta4.jpg" alt="imagen carta 4">');
+const carta5 = new Monstruos("Marcela", 110, 30, 60, 70, "Guerrero", '<img width="120px" src="./cardjsbattle/carta5.jpg" alt="imagen carta 5">');
+const carta6 = new Monstruos("Monica", 70, 80, 20, 30, "Mago", '<img width="120px" src="./cardjsbattle/carta6.jpg" alt="imagen carta 6">');
 
 
 const mazo = [carta1, carta2, carta3, carta4, carta5, carta6];
@@ -206,10 +205,8 @@ function cartasElegida() {
     divLocal.innerHTML = miCarta.img;
     divLocal.innerHTML += miCarta.nombre;
 }
-// imagen de carta rival a descubrir
-function cartaRivalInicial() {
-    document.querySelector("#f2-i5-col3").innerHTML += "CLICK Para conocer a tu rival";
-}
+
+
 // seleccionando carta rival
 divRival.addEventListener("click", () => {
     indiceRandom = Math.floor(Math.random() * 6);
@@ -240,19 +237,19 @@ let defensaRival = null;
 
 //mostrar Habilidades en vivo
 function misHabilidadesVivo(i) {
-    document.querySelector("#miSkillVida").innerHTML = "VIDA............" + i.vida;
-    document.querySelector("#miSkillAtaque").innerHTML = "ATAQUE..........." + i.ataque;
-    document.querySelector("#miSkillVelocidad").innerHTML = "VELOCIDAD......." + i.velocidad;
-    document.querySelector("#miSkillDefensa").innerHTML = "DEFENSA........." + i.defensa;
-    document.querySelector("#miSkillClase").innerHTML = "CLASE........." + i.clase;
+    document.querySelector("#miSkillVida").innerHTML= "VIDA________" + i.vida;
+    document.querySelector("#miSkillAtaque").innerHTML= "ATAQUE_______" + i.ataque;
+    document.querySelector("#miSkillVelocidad").innerHTML= "VELOCIDAD____" + i.velocidad;
+    document.querySelector("#miSkillDefensa").innerHTML= "DEFENSA______" + i.defensa;
+    document.querySelector("#miSkillClase").innerHTML= "CLASE________" + i.clase;
 }
 
 function habilidadesVivoRival(i) {
-    document.querySelector("#rivalSkillVida").innerHTML = "VIDA............" + i.vida;
-    document.querySelector("#rivalSkillAtaque").innerHTML = "ATAQUE..........." + i.ataque;
-    document.querySelector("#rivalSkillVelocidad").innerHTML = "VELOCIDAD......." + i.velocidad;
-    document.querySelector("#rivalSkillDefensa").innerHTML = "DEFENSA........." + i.defensa;
-    document.querySelector("#rivalSkillClase").innerHTML = "CLASE........." + i.clase;
+    document.querySelector("#rivalSkillVida").innerHTML= "VIDA_________" + i.vida;
+    document.querySelector("#rivalSkillAtaque").innerHTML= "ATAQUE_______" + i.ataque;
+    document.querySelector("#rivalSkillVelocidad").innerHTML= "VELOCIDAD____" + i.velocidad;
+    document.querySelector("#rivalSkillDefensa").innerHTML= "DEFENSA______" + i.defensa;
+    document.querySelector("#rivalSkillClase").innerHTML= "CLASE________" + i.clase;
 }
 /*
 function rivalHabilidadesVivo(i) {
@@ -409,8 +406,8 @@ function resultado() {
 
     habilidadesVivoRival(cartaRival);
     misHabilidadesVivo(miCarta);
-    document.querySelector("#mivida") = "Mi Vida = " + miCarta.vida;
-    document.querySelector("#vidarival") = "Vida Rival = " + cartaRival.vida;
+  //  document.querySelector("#mivida") = "Mi Vida = " + miCarta.vida;
+   // document.querySelector("#vidarival") = "Vida Rival = " + cartaRival.vida;
 }
 
 iniciarBatalla.addEventListener("click", () => {

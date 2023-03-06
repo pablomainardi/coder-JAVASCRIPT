@@ -92,28 +92,38 @@
                             <button id="btn-def-3">DEFENSA 3</button>
                         </div>
                         <div class="flex2-items flex2-items-5">
-                            <div id="f2-i5-col1">NOMBRE DE MI CARTA</div>
-                            <div class="f2-i5-col2">1
-                                <button id="iniciarbatalla">INICIAR BATALLA</button>
+                            <div id="f2-i5-col1"></div>
+                            <div class="f2-i5-col2">
+
+                                <span class="vs-vs">
+                                    vs
+                                </span>
+
+                                <span id="roundNum">1</span>
+
                             </div>
-                            <div id="f2-i5-col3"><img src="./cardjsbattle/interrogacion.jpg"
+                            <div id="f2-i5-col3"><img width="120px" src="./cardjsbattle/interrogacion.jpg"
                                     alt="carta random del rival"></div>
                         </div>
-                        <div class="flex2-items flex2-items-6">
-                            <div class="boxlocal">
-                                <div class="div-skill f2-i6-col1">
-                                    <code id="miSkillVida" class="d-skill"></code>
-                                    <code id="miSkillAtaque" class="d-skill"></code>
-                                    <code id="miSkillVelocidad" class="d-skill"></code>
-                                    <code id="miSkillDefensa" class="d-skill"></code>
-                                    <code id="miSkillClase" class="d-skill"></code>
-                                </div>
+                        <div class="box-btn-iniciar">
+                            <button id="iniciarbatalla">INICIAR BATALLA</button>
+
+                        </div>
+
+                        <div id="d-skillE2" class="flex2-items flex2-items-6 boxlocal">
+                            <div class="div-skill id=" f2-i6-col1">
+                                <code id="miSkillVida" class="d-skill"></code>
+                                <code id="miSkillAtaque" class="d-skill"></code>
+                                <code id="miSkillVelocidad" class="d-skill"></code>
+                                <code id="miSkillDefensa" class="d-skill"></code>
+                                <code id="miSkillClase" class="d-skill"></code>
                             </div>
 
 
-                            <div class="boxrival">
-                                <div class="div-skill f2-i6-col3">
-                                    
+
+                            <div id="d-skillE2" class="boxrival">
+                                <div class="div-skill id=" f2-i6-col3">
+
                                     <code id="rivalSkillVida" class="d-skill"></code>
                                     <code id="rivalSkillAtaque" class="d-skill"></code>
                                     <code id="rivalSkillVelocidad" class="d-skill"></code>
@@ -123,13 +133,32 @@
                             </div>
 
                         </div>
+
+
                         <div class="flex2-items flex2-items-7">
-                            <div id="mivida" class="f2-i7-col1">LISTA DE RESUMEN DE LA PELEA DATOS DE MI CARTA</div>
-                            <div id="txtfinal" class="f2-i7-col2">RESUMEN DEL ROUND</div>
-                            <div id="vidarival" class="f2-i7-col3">LISTA DE RESUMEN DE LA PELEA DATOS DE LA CARTA DEL OPONENTE</div>
+
+                            <div class="f2-i7-col1">
+                                <div class="globodato" id="miAtaTotal">130</div>
+                                <div class="globodato" id="miDefTotal">150</div>
+                                <div class="vidadato" id="miVidTotal">95</div>
+                            </div>
+                            <div class="f2-i7-col2">
+                                <div  id="">ATAQUE total</div>
+                                <div  id="">DEFENSA total</div>
+                                <div  id="">VIDA total</div>
+                            </div>
+                            <div class="f2-i7-col3">
+                                <div class="globodato" id="ataTotalRival">230</div>
+                                <div class="globodato" id="defTotalRival">140</div>
+                                <div class="vidadato" id="vidTotalRival">105</div>
+                            </div>
+                         
                         </div>
+
+
+
                         <div class="flex2-items flex2-items-8">
-                            <button>SIGUIENTE ROUND</button> <button id="volverinicio">ATRAS</button>
+                            <button>CAMBIAR RIVAL</button> <button id="volverinicio">ATRAS</button>
                         </div>
                     </div>
 
