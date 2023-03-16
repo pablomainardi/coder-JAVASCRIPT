@@ -1,12 +1,34 @@
 
 // BOTONES DE NAVEGACION ENTRE PORTADA/ETAPA1/ETAPA2 **  
-let carta1  = {};
-let carta2  = {};
-let carta3  = {};
-let carta4  = {};
-let carta5  = {};
-let carta6  = {};
-reseteo();
+let carta1 = {};
+let carta2 = {};
+let carta3 = {};
+let carta4 = {};
+let carta5 = {};
+let carta6 = {};
+
+class Monstruos {
+    constructor(nombre, vida, ataque, velocidad, defensa, clase, img) {
+        this.nombre = nombre;
+        this.vida = vida;
+        this.ataque = ataque;
+        this.velocidad = velocidad;
+        this.defensa = defensa;
+        this.clase = clase;
+        this.img = img
+    }
+
+
+}
+carta1 = new Monstruos("Enrique", 100, 50, 60, 40, "Ataque", '<img width="120px" src="./cardjsbattle/carta1.jpg" alt="imagen carta 1">');
+carta2 = new Monstruos("Lidia", 80, 70, 70, 50, "Defensa", '<img width="120px" src="./cardjsbattle/carta2.jpg" alt="imagen carta 2">');
+carta3 = new Monstruos("Mario", 120, 40, 50, 60, "Defensa", '<img width="120px" src="./cardjsbattle/carta3.jpg" alt="imagen carta 3">');
+carta4 = new Monstruos("Eusevio", 90, 60, 40, 50, "Ataque", '<img width="120px" src="./cardjsbattle/carta4.jpg" alt="imagen carta 4">');
+carta5 = new Monstruos("Marcela", 110, 70, 60, 70, "Defensa", '<img width="120px" src="./cardjsbattle/carta5.jpg" alt="imagen carta 5">');
+carta6 = new Monstruos("Monica", 70, 80, 50, 50, "Ataque", '<img width="120px" src="./cardjsbattle/carta6.jpg" alt="imagen carta 6">');
+
+
+const mazo = [carta1, carta2, carta3, carta4, carta5, carta6];
 
 const btnIrEtapa1 = document.getElementById("btn-portada-inicio");
 const btnIrPortada = document.getElementById("btnaportada");
@@ -19,6 +41,8 @@ const etapa1 = document.getElementById("flex-1");
 // FONDO ETAPA 2 **
 const etapa2 = document.getElementById("flex-2");
 //
+
+const iniciarBatalla = document.querySelector("#iniciarbatalla");
 
 const sonidoSeleccion = new Audio("../../games/cardjsbattle/sound2.wav");
 const sonidoEtapas = new Audio("../../games/cardjsbattle/sound5.wav");
@@ -69,18 +93,21 @@ function irEtapa2() {
 };
 
 btnIrEtapa2.addEventListener("click", () => {
-    
+
     miCartaPresentacion();
     irEtapa2();
     sonidoEtapas.play();
-    
-    
+
+
 });
 
 
 // VOLVER A INICIO - BTN VOLVERINICIO **
 function volverInicio() {
     reseteo();
+    iniciarBatalla.innerHTML = "- INICIAR BATALLA -"
+    iniciarBatalla.style.backgroundColor = "inherit";
+    divRival.innerHTML = '<img width="120px" src="./cardjsbattle/interrogacion.jpg" alt="carta random del rival"></img>'
     etapa2.style.display = "none";
     etapa1.style.display = "flex";
 
@@ -102,30 +129,22 @@ btnVolverInicio.addEventListener("click", () => {
 
 
 function reseteo() {
-    class Monstruos {
-        constructor(nombre, vida, ataque, velocidad, defensa, clase, img) {
-            this.nombre = nombre;
-            this.vida = vida;
-            this.ataque = ataque;
-            this.velocidad = velocidad;
-            this.defensa = defensa;
-            this.clase = clase;
-            this.img = img
-        }
-    
-    
-    };
 
-    carta1 = new Monstruos("Enrique", 100, 50, 60, 40, "Ataque", '<img width="120px" src="./cardjsbattle/carta1.jpg" alt="imagen carta 1">');
-     carta2 = new Monstruos("Lidia", 80, 70, 70, 50, "Defensa", '<img width="120px" src="./cardjsbattle/carta2.jpg" alt="imagen carta 2">');
-     carta3 = new Monstruos("Mario", 120, 40, 50, 60, "Defensa", '<img width="120px" src="./cardjsbattle/carta3.jpg" alt="imagen carta 3">');
-     carta4 = new Monstruos("Eusevio", 90, 60, 40, 50, "Ataque", '<img width="120px" src="./cardjsbattle/carta4.jpg" alt="imagen carta 4">');
-     carta5 = new Monstruos("Marcela", 110, 70, 60, 70, "Defensa", '<img width="120px" src="./cardjsbattle/carta5.jpg" alt="imagen carta 5">');
-     carta6 = new Monstruos("Monica", 70, 80, 50, 50, "Ataque", '<img width="120px" src="./cardjsbattle/carta6.jpg" alt="imagen carta 6">');
- 
+
+    cartaRival = undefined;
+    carta1.vida = 100;
+    carta2.vida = 80;
+    carta3.vida = 120;
+    carta4.vida = 90;
+    carta5.vida = 110;
+    carta6.vida = 70;
+
+    document.querySelector("#ataTotalRival").innerHTML = "???";
+    document.querySelector("#defTotalRival").innerHTML = "???"
+
 
 }
-const mazo = [carta1, carta2, carta3, carta4, carta5, carta6];
+
 
 //ETAPA 1 -- ** ELECCION DE CARTA******** */
 
@@ -249,7 +268,7 @@ let indiceRandom = undefined;
 function indiceCrearRandom() {
 
     indiceRandom = Math.floor((Math.random() * 6));
-    cartaRival = Object.assign({},mazo[indiceRandom]);
+    cartaRival = Object.assign({}, mazo[indiceRandom]);
 
 }
 
@@ -258,9 +277,9 @@ function randomRivalSel() {
     reseteo();
     sonidoRandom.play();
     indiceCrearRandom();
+    habilidadesVivoRival(cartaRival);
     divRival.innerHTML = cartaRival.img;
     divRival.innerHTML += cartaRival.nombre;
-    habilidadesVivoRival(cartaRival);
     vidaTotalRival.innerHTML = cartaRival.vida;
     iniciarBatalla.addEventListener("click", batallaIniciada);
 
@@ -365,66 +384,68 @@ function randomAtaqueRival() {
 }
 
 
+
+
 //randomDefensaRival();
 
 function ataque1(paraQuien) {
     if (paraQuien === miCarta) {
-        miAtaque = (paraQuien.ataque + paraQuien.velocidad);
+        miAtaque = ((paraQuien.ataque * paraQuien.velocidad) / 100);
         miDefensa = paraQuien.defensa;
-    } else{
-        ataqueRival = (paraQuien.ataque + paraQuien.velocidad);
+    } else {
+        ataqueRival = ((paraQuien.ataque * paraQuien.velocidad) / 100);
         defensaRival = paraQuien.defensa;
     }
 }
 
 function ataque2(paraQuien) {
     if (paraQuien === miCarta) {
-        miAtaque = (paraQuien.ataque + (paraQuien.velocidad / 2));
-        miDefensa = (paraQuien.defensa + (paraQuien.velocidad / 2));
-    } else{
-        ataqueRival = (paraQuien.ataque + (paraQuien.velocidad / 2));
-        defensaRival = (paraQuien.defensa + (paraQuien.velocidad / 2));
+        miAtaque = ((paraQuien.ataque * (paraQuien.velocidad / 2))/100) + (paraQuien.ataque / 2);
+        miDefensa = ((paraQuien.defensa * (paraQuien.velocidad / 2))/100) + (paraQuien.defensa / 2);
+    } else {
+        ataqueRival = ((paraQuien.ataque * (paraQuien.velocidad / 2))/100) + (paraQuien.ataque / 2);
+        defensaRival = ((paraQuien.defensa * (paraQuien.velocidad / 2))/100) + (paraQuien.defensa / 2);
     }
 }
 
 function ataque3(paraQuien) {
 
     if (paraQuien === miCarta) {
-        miAtaque = (paraQuien.ataque + paraQuien.velocidad + (paraQuien.defensa / 2));
-        miDefensa = paraQuien.defensa / 2;
-    } else{
-        ataqueRival = (paraQuien.ataque + paraQuien.velocidad + (paraQuien.defensa / 2));
-        defensaRival = paraQuien.defensa / 2;
+        miAtaque = ((paraQuien.ataque * paraQuien.defensa) /100);
+        miDefensa = paraQuien.defensa;
+    } else {
+        ataqueRival = ((paraQuien.ataque * paraQuien.defensa)/100);
+        defensaRival = paraQuien.defensa;
     }
 }
 
 function defensa1(paraQuien) {
     if (paraQuien === miCarta) {
-        miDefensa = paraQuien.defensa + paraQuien.velocidad;
+        miDefensa = ((paraQuien.defensa * paraQuien.velocidad) / 100);
         miAtaque = paraQuien.ataque;
-    } else{
-        defensaRival = paraQuien.defensa + paraQuien.velocidad;
+    } else {
+        defensaRival = ((paraQuien.defensa * paraQuien.velocidad)/100);
         ataqueRival = paraQuien.ataque;
     }
 }
 
 function defensa2(paraQuien) {
     if (paraQuien === miCarta) {
-        miDefensa = (paraQuien.defensa + (paraQuien.velocidad / 2));
-        miAtaque = (paraQuien.ataque + (paraQuien.velocidad / 2));
-    } else{
-        defensaRival = (paraQuien.defensa + (paraQuien.velocidad / 2));
-        ataqueRival = (paraQuien.ataque + (paraQuien.velocidad / 2));
+        miDefensa = ((paraQuien.defensa * (paraQuien.velocidad / 2))/100) + (paraQuien.defensa / 2);
+        miAtaque = ((paraQuien.ataque * (paraQuien.velocidad / 2))/100) + (paraQuien.ataque / 2);
+    } else {
+        defensaRival = ((paraQuien.defensa * (paraQuien.velocidad / 2))/100) + (paraQuien.defensa / 2);
+        ataqueRival = ((paraQuien.ataque * (paraQuien.velocidad / 2))/100) + (paraQuien.ataque / 2);
     }
 }
 
 function defensa3(paraQuien) {
     if (paraQuien === miCarta) {
-        miDefensa = (paraQuien.defensa + paraQuien.velocidad + (paraQuien.ataque / 2));
-        miAtaque = paraQuien.ataque / 2;
-    } else{
-        defensaRival = (paraQuien.defensa + paraQuien.velocidad + (paraQuien.ataque / 2));
-        ataqueRival = paraQuien.ataque / 2;
+        miDefensa = ((paraQuien.defensa * paraQuien.ataque)/100);
+        miAtaque = paraQuien.ataque;
+    } else {
+        defensaRival = ((paraQuien.defensa * paraQuien.ataque)/100);
+        ataqueRival = paraQuien.ataque;
     }
 }
 
@@ -519,7 +540,7 @@ btnDef3.addEventListener("click", () => {
 // COMANZAR / INICIAR BATALLA
 
 
-const iniciarBatalla = document.querySelector("#iniciarbatalla");
+
 
 
 /// veeeeeeeeeeeeeeeeeeeeeeer
@@ -534,70 +555,123 @@ const midRight2 = document.querySelector("#right-mid-2");
 const midLeft2 = document.querySelector("#left-mid-2");
 //let miAtaRes;
 //let miDefRes;
-
-function batallaIniciada() {
- //   miAtaRes = 0;
-  //  miDefRes = 0;
- //   rivalAtaRes = 0;
-  //  rivalDefRes = 0;
-    
-    resultado();
+/*
+function esperaTxt(){
+    midLeft.innerHTML = "???";
+    midRight.innerHTML = "???";
+    midLeft.innerHTML = "??";
+    midRight.innerHTML = "??";
+    midLeft.innerHTML = "?";
+    midRight.innerHTML = "?";
+    midLeft.innerHTML = "";
+    midRight.innerHTML = "";
 }
-
-
-
-
-
-function resultado() {
- //   miAtaRes = miAtaque - defensaRival;//poner ataque total rival
- //   miDefRes = miDefensa - ataqueRival;
-   // rivalAtaRes = ataqueRival - miDefensa;
- //   rivalDefRes = defensaRival - miAtaque;
- let boxRival = document.querySelector("#f2-i6-col3");
- let boxLocal = document.querySelector("#f2-i6-col1");
- randomAtaqueRival();
+*/
+function batallaIniciada() {
+    midLeft.innerHTML = "???";
+    midRight.innerHTML = "???";
     if ((miCarta.vida < 0) || (cartaRival.vida < 0)) {
-        
+
         iniciarBatalla.removeEventListener("click", batallaIniciada);
-      
+
         iniciarBatalla.style.width = "150px";
-        if (miCarta.vida > cartaRival.vida){
+        if (miCarta.vida > cartaRival.vida) {
             iniciarBatalla.innerHTML = "- GANASTE -"
             iniciarBatalla.style.backgroundColor = "green";
-        }else{
+        } else {
             iniciarBatalla.innerHTML = "- PERDISTE -"
             iniciarBatalla.style.backgroundColor = "red";
         }
 
 
     } else {
-       
-        if (miAtaque > defensaRival) {
-            vidaDescAta = miAtaque - defensaRival;
-            cartaRival.vida -= vidaDescAta;
-            midLeft.innerHTML = "ATAQUE EXITOSO, TE QUITE " + vidaDescAta + " PUNTOS DE VIDA";
-        } else {
-            vidaDescAta = defensaRival - miAtaque;
-            miCarta.vida -= vidaDescAta;
-            midLeft2.innerHTML = "ATAQUE DEFECTUOSO, ME QUITASTE " + vidaDescAta + " PUNTOS DE VIDA";
-        }
+  
+setTimeout(resultado, 350);
+  //  resultado();
+}
 
-        if (miDefensa > ataqueRival) {
-            vidaDescDef = miDefensa - ataqueRival;
-            cartaRival.vida -= vidaDescDef;
-            midRight.innerHTML = "Defensa exitosa, te quite " + miDefensa + " PUNTOS DE VIDA";
+let miTotal = undefined;
+let rivalTotal = undefined;
 
-        } else {
-            vidaDescDef = ataqueRival - miCarta.vida;
-            miCarta.vida -= vidaDescDef;
-            midRight2.innerHTML = "Defensa defectuosa, me quitaste " + miDefensa + " PUNTOS DE VIDA";
 
-        }
-    }
 
+let miAtaTotal = undefined;
+let miDefTotal = undefined;
+let rivalDefTotal = undefined;
+let rivalAtaTotal = undefined;
+
+let teQuite = undefined;
+let meQuitaste = undefined;
+
+function mostrarVida(){
     vidaTotalRival.innerHTML = cartaRival.vida;
     miVidaTotal.innerHTML = miCarta.vida;
+}
+
+function resultado() {
+    
+        randomAtaqueRival();
+        if (miAtaque > defensaRival) {
+            miAtaTotal = miAtaque - defensaRival;   
+            midLeft.innerHTML = "Mi ataque te quito " + miAtaTotal + " PUNTOS DE VIDA";
+            cartaRival.vida -= miAtaTotal;
+            mostrarVida();
+        } else{
+            rivalAtaTotal = defensaRival - miAtaque;
+            midLeft2.innerHTML = " Mi Defensa te quito " + rivalAtaTotal + " PUNTOS DE VIDA";
+            miCarta.vida -= rivalAtaTotal;
+            mostrarVida();
+        }
+
+         if (miDefensa > ataqueRival) {
+            miDefTotal = miDefensa - ataqueRival;
+            midRight.innerHTML = "Mi defensa te quito " + miDefTotal + " PUNTOS DE VIDA";
+            cartaRival.vida -= miDefTotal;
+            mostrarVida();
+        } else if (ataqueRival > miDefensa){
+            rivalDefTotal = ataqueRival - miDefensa;
+            midRight2.innerHTML = "Mi ataque te quito " + rivalDefTotal + " PUNTOS DE VIDA";
+            miCarta.vida -= rivalDefTotal;
+            mostrarVida();
+      //  }else{
+
+      if ((miDefensa == ataqueRival) && (miAtaque == defensaRival)){
+        midLeft.innerHTML = "EMPATE";
+       midRight.innerHTML = "EMPATE";
+      }
+   //         
+
+        }
+
+
+    }
+ 
+}
+
+    /*
+    miTotal = miAtaTotal + miDefTotal;
+    rivalTotal = rivalAtaTotal + rivalDefTotal;
+
+    // miAtaqueRes = miAtaTotal - rivalDefTotal ;
+    //   miDefRes = miDefensa - rivalDefTotal;
+
+teQuite = miTotal - rivalTotal;
+meQuitaste = rivalTotal - miTotal;
+    if (miTotal > rivalTotal) {
+        cartaRival.vida -= (miTotal - rivalTotal);
+        midLeft.innerHTML = "GANE!, TE QUITE " + tequite + " PUNTOS DE VIDA";
+    } else if (rivalTotal > miTotal) {
+        miCarta.vida -= (rivalTotal - miTotal);
+        midRight.innerHTML = "GANE!, TE QUITE " + meQuitaste + " PUNTOS DE VIDA";
+    } else {
+        midRight.innerHTML = "EMPATE";
+        midLeft.innerHTML = "EMPATE";
+    }
+
+*/
+
+  
     //  document.querySelector("#mivida") = "Mi Vida = " + miCarta.vida;
     // document.querySelector("#vidarival") = "Vida Rival = " + cartaRival.vida;
-}
+
 

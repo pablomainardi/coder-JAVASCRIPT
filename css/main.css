@@ -508,8 +508,17 @@ footer {
 .center-btn {
     display: flex;
     justify-content: space-around;
+    width: 100%;
+
 }
 
+.left {
+    width: 100%;
+}
+
+.right {
+    width: 100%;
+}
 
 
 .flex2-items-6 {
@@ -529,6 +538,8 @@ footer {
 .box-btn-iniciar button {
     height: 50px;
     border-radius: 50%;
+    font-weight: 700;
+    width: 150px;
 }
 
 
