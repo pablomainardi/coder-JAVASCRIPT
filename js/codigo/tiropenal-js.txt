@@ -1,55 +1,3 @@
-btnHtml = document.querySelector("#btn-html");
-btnCss = document.querySelector("#btn-css");
-btnJs = document.querySelector("#btn-js");
-
-codigoSel = document.querySelector("#codigosel");
-
-let codigoSelActivado = false;
-
-
-
-btnHtml.addEventListener("click", () => {
-    if (codigoSelActivado) {
-        codigoSelActivado = false;
-        btnHtml.style.backgroundColor = "var(--bg1)";
-        codigoSel.innerHTML = '';
-    } else {
-        codigoSelActivado = true;
-        btnHtml.style.backgroundColor = "var(--bg2)";
-        btnCss.style.backgroundColor = "var(--bg1)";
-        btnJs.style.backgroundColor = "var(--bg1)";
-        codigoSel.innerHTML = '<iframe src="../js/codigo/card-html.txt"></iframe>';
-    }
-})
-
-btnCss.addEventListener("click", () => {
-    if (codigoSelActivado) {
-        codigoSelActivado = false;
-        btnCss.style.backgroundColor = "var(--bg1)";
-        codigoSel.innerHTML = '';
-    } else {
-        codigoSelActivado = true;
-        btnHtml.style.backgroundColor = "var(--bg1)";
-        btnCss.style.backgroundColor = "var(--bg2)";
-        btnJs.style.backgroundColor = "var(--bg1)";
-        codigoSel.innerHTML = '<iframe src="../js/codigo/card-css.txt"></iframe>';
-    }
-})
-
-btnJs.addEventListener("click", () => {
-    if (codigoSelActivado) {
-        codigoSelActivado = false;
-        btnJs.style.backgroundColor = "var(--bg1)";
-        codigoSel.innerHTML = '';
-    } else {
-        codigoSelActivado = true;
-        btnHtml.style.backgroundColor = "var(--bg1)";
-        btnCss.style.backgroundColor = "var(--bg1)";
-        btnJs.style.backgroundColor = "var(--bg2)";
-        codigoSel.innerHTML = '<iframe src="../js/codigo/card-html.txt"></iframe>';
-    }
-})
-
 
 // BOTONES DE NAVEGACION ENTRE PORTADA/ETAPA1/ETAPA2 **  
 let carta1 = {};
@@ -308,10 +256,7 @@ divRival.addEventListener("click", () => {
 const cambiarRival = document.querySelector("#cambiarRival");
 
 // click boton cambiar rival
-cambiarRival.addEventListener("click", ()=>{
-    reseteo();
-    randomRivalSel();
-});
+cambiarRival.addEventListener("click", randomRivalSel);
 
 /*******PREPARAR BATALLA********/
 // ***** miCarta ***** cartaRival ******

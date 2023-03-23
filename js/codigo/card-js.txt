@@ -1,5 +1,32 @@
 
 // BOTONES DE NAVEGACION ENTRE PORTADA/ETAPA1/ETAPA2 **  
+let carta1 = {};
+let carta2 = {};
+let carta3 = {};
+let carta4 = {};
+let carta5 = {};
+let carta6 = {};
+
+class Monstruos {
+    constructor(nombre, vida, ataque, velocidad, defensa, clase, img) {
+        this.nombre = nombre;
+        this.vida = vida;
+        this.ataque = ataque;
+        this.velocidad = velocidad;
+        this.defensa = defensa;
+        this.clase = clase;
+        this.img = img
+    }
+}
+
+carta1 = new Monstruos("Enrique", 10000, 50, 60, 40, "Ataque", '<img width="120px" src="./cardjsbattle/carta1.jpg" alt="imagen carta 1">');
+carta2 = new Monstruos("Lidia", 8900, 70, 70, 50, "Defensa", '<img width="120px" src="./cardjsbattle/carta2.jpg" alt="imagen carta 2">');
+carta3 = new Monstruos("Mario", 9500, 40, 50, 60, "Defensa", '<img width="120px" src="./cardjsbattle/carta3.jpg" alt="imagen carta 3">');
+carta4 = new Monstruos("Eusevio", 9800, 60, 40, 50, "Ataque", '<img width="120px" src="./cardjsbattle/carta4.jpg" alt="imagen carta 4">');
+carta5 = new Monstruos("Marcela", 10500, 70, 60, 70, "Defensa", '<img width="120px" src="./cardjsbattle/carta5.jpg" alt="imagen carta 5">');
+carta6 = new Monstruos("Monica", 9300, 80, 50, 50, "Ataque", '<img width="120px" src="./cardjsbattle/carta6.jpg" alt="imagen carta 6">');
+
+const mazo = [carta1, carta2, carta3, carta4, carta5, carta6];
 
 const btnIrEtapa1 = document.getElementById("btn-portada-inicio");
 const btnIrPortada = document.getElementById("btnaportada");
@@ -12,6 +39,8 @@ const etapa1 = document.getElementById("flex-1");
 // FONDO ETAPA 2 **
 const etapa2 = document.getElementById("flex-2");
 //
+
+const iniciarBatalla = document.querySelector("#iniciarbatalla");
 
 const sonidoSeleccion = new Audio("../../games/cardjsbattle/sound2.wav");
 const sonidoEtapas = new Audio("../../games/cardjsbattle/sound5.wav");
@@ -27,14 +56,15 @@ let vidaTotalRival = document.querySelector("#vidTotalRival");
 function irEtapa1() {
     btnIrEtapa1.style.display = "none";
     etapa1.style.display = "flex";
-
 };
 
 btnIrEtapa1.addEventListener("click", () => {
     irEtapa1();
+    miCartaPresentacion();
     mostrarNombres();
     sonidoEtapas.play();
 });
+
 // VOLVER A PORTADA - BTN VOLVER A PORTADA **
 function irPortada() {
     etapa1.style.display = "none";
@@ -56,22 +86,23 @@ function irEtapa2() {
     //vidaTotalRival.innerHTML = cartaRival.vida;
     cartasElegida();
     misHabilidadesVivo(miCarta);
-    habilidadesVivoRival(cartaRival);
 };
 
 btnIrEtapa2.addEventListener("click", () => {
+    miCartaPresentacion();
     irEtapa2();
     sonidoEtapas.play();
-    miVidaTotal.innerHTML = miCarta.vida
-    vidaTotalRival.innerHTML = cartaRival.vida
 });
 
 
 // VOLVER A INICIO - BTN VOLVERINICIO **
 function volverInicio() {
+    reseteo();
+    iniciarBatalla.innerHTML = "- INICIAR BATALLA -"
+    iniciarBatalla.style.backgroundColor = "inherit";
+    divRival.innerHTML = '<img width="120px" src="./cardjsbattle/interrogacion.jpg" alt="carta random del rival"></img>'
     etapa2.style.display = "none";
     etapa1.style.display = "flex";
-
 }
 
 btnVolverInicio.addEventListener("click", () => {
@@ -80,31 +111,19 @@ btnVolverInicio.addEventListener("click", () => {
 });
 
 
-
 // CREACION DE OBJETOS - CARTAS ********
-class Monstruos {
-    constructor(nombre, vida, ataque, velocidad, defensa, clase, img) {
-        this.nombre = nombre;
-        this.vida = vida;
-        this.ataque = ataque;
-        this.velocidad = velocidad;
-        this.defensa = defensa;
-        this.clase = clase;
-        this.img = img
-    }
 
-
-};
-//defensa();
-
-
-const carta1 = new Monstruos("Enrique", 100, 50, 60, 40, "Ataque", '<img width="120px" src="./cardjsbattle/carta1.jpg" alt="imagen carta 1">');
-const carta2 = new Monstruos("Lidia", 80, 70, 70, 50, "Defensa", '<img width="120px" src="./cardjsbattle/carta2.jpg" alt="imagen carta 2">');
-const carta3 = new Monstruos("Mario", 120, 40, 50, 60, "Defensa", '<img width="120px" src="./cardjsbattle/carta3.jpg" alt="imagen carta 3">');
-const carta4 = new Monstruos("Eusevio", 90, 60, 40, 50, "Ataque", '<img width="120px" src="./cardjsbattle/carta4.jpg" alt="imagen carta 4">');
-const carta5 = new Monstruos("Marcela", 110, 70, 60, 70, "Defensa", '<img width="120px" src="./cardjsbattle/carta5.jpg" alt="imagen carta 5">');
-const carta6 = new Monstruos("Monica", 70, 80, 50, 50, "Ataque", '<img width="120px" src="./cardjsbattle/carta6.jpg" alt="imagen carta 6">');
-const mazo = [carta1, carta2, carta3, carta4, carta5, carta6];
+function reseteo() {
+    cartaRival = undefined;
+    carta1.vida = 10000;
+    carta2.vida = 8900;
+    carta3.vida = 9500;
+    carta4.vida = 9800;
+    carta5.vida = 10500;
+    carta6.vida = 9300;
+    document.querySelector("#ataTotalRival").innerHTML = "???";
+    document.querySelector("#defTotalRival").innerHTML = "???"
+}
 
 //ETAPA 1 -- ** ELECCION DE CARTA******** */
 
@@ -124,22 +143,14 @@ function mostrarNombres() {
     }
 }
 
+
 // ETAPA 1 -- SELECCIONAR CARTA Y MOSTRAR HABILIDADES
 
-let cartaSeleccionada = carta1;
-let miCarta = Object.assign({}, cartaSeleccionada);
-let cartaRival = Object.assign({}, cartaSeleccionada);
-
-
-
-miCartaPresentacion();
-
 function miCartaPresentacion() {
+    let miCarta = Object.assign({}, carta1);
     document.querySelector("#f1-i4-imgcarta").innerHTML = carta1.img;
     document.querySelector("#nombrecarta").innerHTML = carta1.nombre;
-    miCarta = carta1;
     mostrarHab(miCarta);
-
 }
 
 function mostrarHab(i) {
@@ -149,10 +160,6 @@ function mostrarHab(i) {
     document.querySelector("#skillDefensa").innerHTML = "DEFENSA........." + i.defensa;
     document.querySelector("#skillClase").innerHTML = "CLASE........." + i.clase;
 }
-
-
-
-
 
 // VER COMO ACTIVAR OTRA VEZ BLUR CUANDO CLICKEA OTRA CARTA
 
@@ -205,7 +212,6 @@ imgCarta6.addEventListener("click", () => {
 })
 
 
-
 // ETAPA 2 ********************************************
 
 /*local vs visitante roundi/mg */
@@ -214,43 +220,42 @@ const divLocal = document.querySelector("#f2-i5-col1");
 const divRival = document.querySelector("#f2-i5-col3");
 
 
-
-
-
 // mi carta exhibida
 function cartasElegida() {
     divLocal.innerHTML = miCarta.img;
     divLocal.innerHTML += miCarta.nombre;
-
+    miVidaTotal.innerHTML = miCarta.vida
 }
 
+let indiceRandom = undefined;
 
-
-let indiceRandom;
-
+function indiceCrearRandom() {
+    indiceRandom = Math.floor((Math.random() * 6));
+    cartaRival = Object.assign({}, mazo[indiceRandom]);
+}
 
 // seleccionando carta rival
 function randomRivalSel() {
+    reseteo();
     sonidoRandom.play();
-    indiceRandom = Math.floor(Math.random() * 6);
-    divRival.innerHTML = mazo[indiceRandom].img;
-    divRival.innerHTML += mazo[indiceRandom].nombre;
-    cartaRival = mazo[indiceRandom]
+    indiceCrearRandom();
     habilidadesVivoRival(cartaRival);
+    divRival.innerHTML = cartaRival.img;
+    divRival.innerHTML += cartaRival.nombre;
     vidaTotalRival.innerHTML = cartaRival.vida;
-    divRival.removeEventListener("click", randomRivalSel);
+    iniciarBatalla.addEventListener("click", batallaIniciada);
 }
 
+// click en la imagen "?"
 divRival.addEventListener("click", () => {
-
     randomRivalSel();
     console.log(cartaRival);
-
 });
 
 
-
 const cambiarRival = document.querySelector("#cambiarRival");
+
+// click boton cambiar rival
 cambiarRival.addEventListener("click", randomRivalSel);
 
 /*******PREPARAR BATALLA********/
@@ -265,8 +270,6 @@ const btnDef1 = document.querySelector("#btn-def-1");
 const btnDef2 = document.querySelector("#btn-def-2");
 const btnDef3 = document.querySelector("#btn-def-3");
 
-
-
 const miAtaqueTotal = document.querySelector("#miAtaTotal");
 const miDefensaTotal = document.querySelector("#miDefTotal");
 
@@ -279,41 +282,30 @@ let defensaRival = null;
 
 //mostrar Habilidades en vivo
 function misHabilidadesVivo(i) {
-    document.querySelector("#miSkillVida").innerHTML = "VIDA________" + i.vida;
+    document.querySelector("#miSkillVida").innerHTML = "VIDA_______" + i.vida;
     document.querySelector("#miSkillAtaque").innerHTML = "ATAQUE_______" + i.ataque;
     document.querySelector("#miSkillVelocidad").innerHTML = "VELOCIDAD____" + i.velocidad;
     document.querySelector("#miSkillDefensa").innerHTML = "DEFENSA______" + i.defensa;
-    document.querySelector("#miSkillClase").innerHTML = "CLASE________" + i.clase;
+    document.querySelector("#miSkillClase").innerHTML = "CLASE_____" + i.clase;
 }
 
 function habilidadesVivoRival(i) {
-    document.querySelector("#rivalSkillVida").innerHTML = "VIDA_________" + i.vida;
+    document.querySelector("#rivalSkillVida").innerHTML = "VIDA_______" + i.vida;
     document.querySelector("#rivalSkillAtaque").innerHTML = "ATAQUE_______" + i.ataque;
     document.querySelector("#rivalSkillVelocidad").innerHTML = "VELOCIDAD____" + i.velocidad;
     document.querySelector("#rivalSkillDefensa").innerHTML = "DEFENSA______" + i.defensa;
-    document.querySelector("#rivalSkillClase").innerHTML = "CLASE________" + i.clase;
+    document.querySelector("#rivalSkillClase").innerHTML = "CLASE_____" + i.clase;
 }
-/*
-function rivalHabilidadesVivo(i) {
-    document.querySelector("#miSkillVida").innerHTML = "VIDA............" + i.vida;
-    document.querySelector("#miSkillAtaque").innerHTML = "ATAQUE..........." + i.ataque;
-    document.querySelector("#miSkillVelocidad").innerHTML = "VELOCIDAD......." + i.velocidad;
-    document.querySelector("#miSkillDefensa").innerHTML = "DEFENSA........." + i.defensa;
-    document.querySelector("#miSkillClase").innerHTML = "CLASE........." + i.clase;
-}
-
-*/
-
-rivalDefRes = undefined;
-rivalAtaRes = undefined;
 
 
 let indiceRandomRival = undefined;
-function randomAtaqueRival() {
-    function indiceRandomRival() {
-     return Math.floor((Math.random() * 6) + 1);
-    }
 
+function indiceRandomRivalSel() {
+    indiceRandomRival = Math.floor((Math.random() * 6) + 1);
+}
+
+function randomAtaqueRival() {
+    indiceRandomRivalSel();
     switch (indiceRandomRival) {
         case 1:
             ataque1(cartaRival);
@@ -334,74 +326,74 @@ function randomAtaqueRival() {
             defensa3(cartaRival);
             break;
     }
-    console.log(indiceRandom);
-    console.log(ataqueRival + "...Ataque Rival");
-    console.log(defensaRival + "...Defensa Rival");
+    console.log(indiceRandomRival);
+    console.log(ataqueRival + " -- Ataque Rival");
+    console.log(defensaRival + " -- Defensa Rival");
+    console.log("--------vs--------")
+    console.log(miAtaque + " -- Mi Ataque");
+    console.log(miDefensa + " -- Mi Defensa");
     document.querySelector("#ataTotalRival").innerHTML = ataqueRival;
     document.querySelector("#defTotalRival").innerHTML = defensaRival;
 }
 
-
-//randomDefensaRival();
-
 function ataque1(paraQuien) {
-    if (paraQuien == miCarta) {
-        miAtaque = (paraQuien.ataque + paraQuien.velocidad);
+    if (paraQuien === miCarta) {
+        miAtaque = ((paraQuien.ataque * paraQuien.velocidad));
         miDefensa = paraQuien.defensa;
-    } else if (paraQuien == cartaRival) {
-        ataqueRival = (paraQuien.ataque + paraQuien.velocidad);
+    } else {
+        ataqueRival = ((paraQuien.ataque * paraQuien.velocidad));
         defensaRival = paraQuien.defensa;
     }
 }
 
 function ataque2(paraQuien) {
-    if (paraQuien == miCarta) {
-        miAtaque = (paraQuien.ataque + (paraQuien.velocidad / 2));
-        miDefensa = (paraQuien.defensa + (paraQuien.velocidad / 2));
-    } else if (paraQuien == cartaRival) {
-        ataqueRival = (paraQuien.ataque + (paraQuien.velocidad / 2));
-        defensaRival = (paraQuien.defensa + (paraQuien.velocidad / 2));
+    if (paraQuien === miCarta) {
+        miAtaque = ((paraQuien.ataque * (paraQuien.velocidad / 2)) + (paraQuien.ataque / 2));
+        miDefensa = ((paraQuien.defensa * (paraQuien.velocidad / 2)) + (paraQuien.defensa / 2));
+    } else {
+        ataqueRival = ((paraQuien.ataque * (paraQuien.velocidad / 2)) + (paraQuien.ataque / 2));
+        defensaRival = ((paraQuien.defensa * (paraQuien.velocidad / 2)) + (paraQuien.defensa / 2));
     }
 }
 
 function ataque3(paraQuien) {
 
-    if (paraQuien == miCarta) {
-        miAtaque = (paraQuien.ataque + paraQuien.velocidad + (paraQuien.defensa / 2));
-        miDefensa = paraQuien.defensa / 2;
-    } else if (paraQuien == cartaRival) {
-        ataqueRival = (paraQuien.ataque + paraQuien.velocidad + (paraQuien.defensa / 2));
-        defensaRival = paraQuien.defensa / 2;
+    if (paraQuien === miCarta) {
+        miAtaque = ((paraQuien.ataque * paraQuien.defensa));
+        miDefensa = paraQuien.defensa;
+    } else {
+        ataqueRival = ((paraQuien.ataque * paraQuien.defensa));
+        defensaRival = paraQuien.defensa;
     }
 }
 
 function defensa1(paraQuien) {
-    if (paraQuien == miCarta) {
-        miDefensa = paraQuien.defensa + paraQuien.velocidad;
+    if (paraQuien === miCarta) {
+        miDefensa = ((paraQuien.defensa * paraQuien.velocidad));
         miAtaque = paraQuien.ataque;
-    } else if (paraQuien == cartaRival) {
-        defensaRival = paraQuien.defensa + paraQuien.velocidad;
+    } else {
+        defensaRival = ((paraQuien.defensa * paraQuien.velocidad));
         ataqueRival = paraQuien.ataque;
     }
 }
 
 function defensa2(paraQuien) {
-    if (paraQuien == miCarta) {
-        miDefensa = (paraQuien.defensa + (paraQuien.velocidad / 2));
-        miAtaque = (paraQuien.ataque + (paraQuien.velocidad / 2));
-    } else if (paraQuien == cartaRival) {
-        defensaRival = (paraQuien.defensa + (paraQuien.velocidad / 2));
-        ataqueRival = (paraQuien.ataque + (paraQuien.velocidad / 2));
+    if (paraQuien === miCarta) {
+        miDefensa = ((paraQuien.defensa * (paraQuien.velocidad / 2)) + (paraQuien.defensa / 2));
+        miAtaque = ((paraQuien.ataque * (paraQuien.velocidad / 2)) + (paraQuien.ataque / 2));
+    } else {
+        defensaRival = ((paraQuien.defensa * (paraQuien.velocidad / 2)) + (paraQuien.defensa / 2));
+        ataqueRival = ((paraQuien.ataque * (paraQuien.velocidad / 2)) + (paraQuien.ataque / 2));
     }
 }
 
 function defensa3(paraQuien) {
-    if (paraQuien == miCarta) {
-        miDefensa = (paraQuien.defensa + paraQuien.velocidad + (paraQuien.ataque / 2));
-        miAtaque = paraQuien.ataque / 2;
-    } else if (paraQuien == cartaRival) {
-        defensaRival = (paraQuien.defensa + paraQuien.velocidad + (paraQuien.ataque / 2));
-        ataqueRival = paraQuien.ataque / 2;
+    if (paraQuien === miCarta) {
+        miDefensa = ((paraQuien.defensa * paraQuien.ataque));
+        miAtaque = paraQuien.ataque;
+    } else {
+        defensaRival = ((paraQuien.defensa * paraQuien.ataque));
+        ataqueRival = paraQuien.ataque;
     }
 }
 
@@ -414,11 +406,9 @@ btnAta1.addEventListener("click", () => {
     btnDef2.classList.remove("boton-activado");
     btnDef3.classList.remove("boton-activado");
     ataque1(miCarta);
-    misHabilidadesVivo(miCarta);
     sonidoSeleccion.play();
     miAtaqueTotal.innerHTML = miAtaque;
     miDefensaTotal.innerHTML = miDefensa;
-
 })
 
 btnAta2.addEventListener("click", () => {
@@ -429,11 +419,9 @@ btnAta2.addEventListener("click", () => {
     btnDef2.classList.remove("boton-activado");
     btnDef3.classList.remove("boton-activado");
     ataque2(miCarta);
-    misHabilidadesVivo(miCarta);
     sonidoSeleccion.play();
     miAtaqueTotal.innerHTML = miAtaque;
     miDefensaTotal.innerHTML = miDefensa;
-
 })
 
 btnAta3.addEventListener("click", () => {
@@ -444,11 +432,9 @@ btnAta3.addEventListener("click", () => {
     btnDef2.classList.remove("boton-activado");
     btnDef3.classList.remove("boton-activado");
     ataque3(miCarta);
-    misHabilidadesVivo(miCarta);
     sonidoSeleccion.play();
     miAtaqueTotal.innerHTML = miAtaque;
     miDefensaTotal.innerHTML = miDefensa;
-
 })
 
 //DEFENSA SELECCION **
@@ -461,12 +447,9 @@ btnDef1.addEventListener("click", () => {
     btnAta2.classList.remove("boton-activado");
     btnAta3.classList.remove("boton-activado");
     defensa1(miCarta);
-    misHabilidadesVivo(miCarta);
     sonidoSeleccion.play();
     miAtaqueTotal.innerHTML = miAtaque;
     miDefensaTotal.innerHTML = miDefensa;
-
-
 })
 
 btnDef2.addEventListener("click", () => {
@@ -477,7 +460,6 @@ btnDef2.addEventListener("click", () => {
     btnAta2.classList.remove("boton-activado");
     btnAta3.classList.remove("boton-activado");
     defensa2(miCarta);
-    misHabilidadesVivo(miCarta);
     sonidoSeleccion.play();
     miAtaqueTotal.innerHTML = miAtaque;
     miDefensaTotal.innerHTML = miDefensa;
@@ -491,88 +473,79 @@ btnDef3.addEventListener("click", () => {
     btnAta2.classList.remove("boton-activado");
     btnAta3.classList.remove("boton-activado");
     defensa3(miCarta);
-    misHabilidadesVivo(miCarta);
     sonidoSeleccion.play();
     miAtaqueTotal.innerHTML = miAtaque;
     miDefensaTotal.innerHTML = miDefensa;
-
 })
 
-// APARTIR DE ACA *****************************
-// COMANZAR / INICIAR BATALLA
-
-
-const iniciarBatalla = document.querySelector("#iniciarbatalla");
-
-
-/// veeeeeeeeeeeeeeeeeeeeeeer
-
-
-
-
-
+// espacio entre imagen de carta y habilidades
 const midRight = document.querySelector("#right-mid");
 const midLeft = document.querySelector("#left-mid");
 const midRight2 = document.querySelector("#right-mid-2");
 const midLeft2 = document.querySelector("#left-mid-2");
-let miAtaRes;
-let miDefRes;
-
-iniciarBatalla.addEventListener("click", () => {
-    miAtaRes = 0;//poner ataque total rival
-    miDefRes = 0;
-    rivalAtaRes = 0;
-    rivalDefRes = 0;
-    randomAtaqueRival();
-    miAtaRes = miAtaque - defensaRival;//poner ataque total rival
-    miDefRes = miDefensa - ataqueRival;
-    rivalAtaRes = ataqueRival - miDefensa;
-    rivalDefRes = defensaRival - miAtaque;
-    resultado();
-
-}
-)
 
 
-
-function resultado() {
-    // hacer un switch
-    if ((miCarta.vida <= 0) || (cartaRival.vida <= 0)) {
-        iniciarBatalla.innerHTML = "<style backgroundColor:red><strong>- FIN DEL JUEGO -</strong></style>"
-        removeEventListener("click", iniciarBatalla);
-
-    } else {
-        habilidadesVivoRival(cartaRival);
-
-        if (miAtaRes >= rivalDefRes) {
-            vidaDescAta = miAtaRes - rivalDefRes;
-            cartaRival.vida -= vidaDescAta;
-            midLeft.innerHTML = "TE QUITE " + vidaDescAta + " PUNTOS DE VIDA";
+function finBatalla() {
+    if ((miCarta.vida < 0) || (cartaRival.vida < 0)) {
+        iniciarBatalla.removeEventListener("click", batallaIniciada);
+        if (miCarta.vida > cartaRival.vida) {
+            iniciarBatalla.innerHTML = "- GANASTE -"
+            iniciarBatalla.style.backgroundColor = "green";
         } else {
-            vidaDescAta = rivalDefRes - miAtaRes;
-            miCarta.vida += vidaDescAta;
-            midLeft2.innerHTML = "TU ATAQUE ME QUITO " + vidaDescAta + " PUNTOS DE VIDA";
-        }
-
-        if (miDefRes >= rivalAtaRes) {
-            vidaDescDef = miDefRes - rivalAtaRes;
-            cartaRival.vida -= vidaDescDef;
-            midRight.innerHTML = "MI DEFENSA TE SACO " + miDefRes + " PUNTOS DE VIDA";
-
-        } else {
-            miCarta.vida += vidaDescDef;
-
-            midRight2.innerHTML = "TU DEFENSA ME HA QUITADO " + miDefRes + " PUNTOS DE VIDA";
-
+            iniciarBatalla.innerHTML = "- PERDISTE -"
+            iniciarBatalla.style.backgroundColor = "red";
         }
     }
-
-
-    habilidadesVivoRival(cartaRival);
-    misHabilidadesVivo(miCarta);
-    vidaTotalRival.innerHTML = cartaRival.vida;
-    miVidaTotal.innerHTML = miCarta.vida;
-    //  document.querySelector("#mivida") = "Mi Vida = " + miCarta.vida;
-    // document.querySelector("#vidarival") = "Vida Rival = " + cartaRival.vida;
 }
 
+function batallaIniciada() {
+    midLeft.innerHTML = "???";
+    midRight.innerHTML = "???";
+    finBatalla();
+    setTimeout(resultado, 500);
+}
+
+
+let miAtaTotal = undefined;
+let miDefTotal = undefined;
+let rivalDefTotal = undefined;
+let rivalAtaTotal = undefined;
+
+
+function mostrarVida() {
+    vidaTotalRival.innerHTML = cartaRival.vida;
+    miVidaTotal.innerHTML = miCarta.vida;
+}
+
+function resultado() {
+    randomAtaqueRival();
+    if (miAtaque > defensaRival) {
+        miAtaTotal = miAtaque - defensaRival;
+        midLeft.innerHTML = "Mi ataque te quito " + miAtaTotal + " de vida";
+        cartaRival.vida -= miAtaTotal;
+        mostrarVida();
+        finBatalla();
+    }
+
+    if (defensaRival > miAtaque) {
+        rivalAtaTotal = defensaRival - miAtaque;
+        midLeft2.innerHTML = " Mi Defensa te quito " + rivalAtaTotal + " de vida";
+        miCarta.vida -= rivalAtaTotal;
+        mostrarVida();
+        finBatalla();
+    }
+    if (miDefensa > ataqueRival) {
+        miDefTotal = miDefensa - ataqueRival;
+        midRight.innerHTML = "y mi defensa te quito " + miDefTotal + " de vida";
+        cartaRival.vida -= miDefTotal;
+        mostrarVida();
+        finBatalla();
+    }
+    if (ataqueRival > miDefensa) {
+        rivalDefTotal = ataqueRival - miDefensa;
+        midRight2.innerHTML = "y mi ataque te quito " + rivalDefTotal + " de vida";
+        miCarta.vida -= rivalDefTotal;
+        mostrarVida();
+        finBatalla();
+    }
+}

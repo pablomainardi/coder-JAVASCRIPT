@@ -64,7 +64,6 @@ header {
 
 .nav-link {
     display: flex;
-
     list-style: none;
     flex-wrap: wrap;
 }
@@ -73,11 +72,13 @@ header {
     justify-content: flex-end;
     margin: 3px 5px;
     padding: 7px;
+    width: max-content;
 }
 
 .nav-link a {
     padding: 5%;
     transition: .2s;
+
 
 }
 
@@ -166,6 +167,8 @@ label {
     color: var(--fuente1);
 }
 
+
+
 .cambiarcolor {
     width: 70%;
     padding: 10px;
@@ -250,9 +253,32 @@ footer {
         rgb(15, 15, 15) ,
         rgb(40, 90, 40)50% 
     );*/
-    color: var(--fuente1);
-    margin-top: 5px;
 
+    border-top: 4px solid var(--luzbox);
+    padding: 15px;
+    color: var(--fuente1);
+    margin-top: 10px;
+}
+
+footer h1 {
+    margin: 0 auto;
+    margin-top: 30px;
+}
+
+.logoslink {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logoslink a {
+    width: 100px;
+    margin: 10px 20px;
+}
+
+.logoslink img {
+    width: 100%;
+    border-radius: 25px;
 }
 
 
@@ -270,6 +296,35 @@ footer {
 
 
 }
+
+/****MOSTRAR CODIGOS*******/
+
+.codebar {
+    margin: 0 auto;
+    border: 2px solid var(--fuente1);
+    background: radial-gradient(var(--bg1),
+            var(--bg2));
+
+
+}
+
+.btncode {
+    width: 70px;
+    height: 30px;
+    font-size: 18px;
+    border: 2px solid var(--luzbox);
+    background-color: transparent;
+    color: var(--fuente1);
+    margin: 0 10px;
+    margin-bottom: 10px;
+}
+
+.mostrarCodigo iframe {
+    width: 90%;
+    height: 600px;
+
+}
+
 
 /*****JUEGO******* **CARD JS BATTLE*/
 
@@ -612,14 +667,60 @@ footer {
 
 /*****JUEGO******* TIRO PENAL */
 
-.battle-container {
+.portadapenal {
+    background-image: url(../image/tiro_penal.jpg);
+    background-size: cover;
+    background-position: center;
     display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 80vh;
+    height: 100%;
+
+}
+
+.portadapenal h2 {
+    font-size: 80px;
+    color: #cdaa22;
+    border-radius: 25px;
+    box-shadow: #fff 0 0 40px;
+    padding: 15px;
+}
+
+.portadapenal label {
+    font-size: 35px;
+    font-weight: 600;
+    color: #cdaa22;
+}
+
+.portadapenal input {
+    width: 200px;
+    height: 50px;
+    font-size: 30px;
+    margin: 8px auto;
+}
+
+.portadapenal input:last-of-type {
+    width: 100px;
+    height: 40px;
+}
+
+.penal-container {
+    display: none;
     flex-wrap: wrap;
     width: 100%;
-
     box-sizing: border-box;
 }
 
+.ingresabox {
+    display: flex;
+    flex-direction: column;
+    color: #cdaa22;
+    border-radius: 25px;
+    box-shadow: #fff 0 0 40px;
+    padding: 15px;
+}
 
 .resultado {
     display: flex;

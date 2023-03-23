@@ -1,3 +1,82 @@
+btnHtml = document.querySelector("#btn-html");
+btnCss = document.querySelector("#btn-css");
+btnJs = document.querySelector("#btn-js");
+
+codigoSel = document.querySelector("#codigosel");
+
+let codigoSelActivado = false;
+
+
+
+btnHtml.addEventListener("click", () => {
+    if (codigoSelActivado) {
+        codigoSelActivado = false;
+        btnHtml.style.backgroundColor = "var(--bg1)";
+        codigoSel.innerHTML = '';
+    } else {
+        codigoSelActivado = true;
+        btnHtml.style.backgroundColor = "var(--bg2)";
+        btnCss.style.backgroundColor = "var(--bg1)";
+        btnJs.style.backgroundColor = "var(--bg1)";
+        codigoSel.innerHTML = '<iframe src="../js/codigo/tiropenal-html.txt"></iframe>';
+    }
+})
+
+btnCss.addEventListener("click", () => {
+    if (codigoSelActivado) {
+        codigoSelActivado = false;
+        btnCss.style.backgroundColor = "var(--bg1)";
+        codigoSel.innerHTML = '';
+    } else {
+        codigoSelActivado = true;
+        btnHtml.style.backgroundColor = "var(--bg1)";
+        btnCss.style.backgroundColor = "var(--bg2)";
+        btnJs.style.backgroundColor = "var(--bg1)";
+        codigoSel.innerHTML = '<iframe src="../js/codigo/tiropenal-css.txt"></iframe>';
+    }
+})
+
+btnJs.addEventListener("click", () => {
+    if (codigoSelActivado) {
+        codigoSelActivado = false;
+        btnJs.style.backgroundColor = "var(--bg1)";
+        codigoSel.innerHTML = '';
+    } else {
+        codigoSelActivado = true;
+        btnHtml.style.backgroundColor = "var(--bg1)";
+        btnCss.style.backgroundColor = "var(--bg1)";
+        btnJs.style.backgroundColor = "var(--bg2)";
+        codigoSel.innerHTML = '<iframe src="../js/codigo/tiropenal-html.txt"></iframe>';
+    }
+})
+
+const penalPortada = document.querySelector("#penalportada");
+
+const penalContainer = document.querySelector("#penalcontainer");
+
+const btnEntrar = document.querySelector("#btnentrar");
+
+const btnPenalVolver = document.querySelector("#btn-penal-volver");
+
+let namePlayer = undefined;
+let numNameHuman = undefined;
+
+btnEntrar.addEventListener("click", ()=> {
+    namePlayer = document.querySelector("#ingresanombre").value;
+    numNameHuman = namePlayer;
+ penalPortada.style.display = "none";
+ penalContainer.style.display = "flex";
+ tablero();
+})
+
+btnPenalVolver.addEventListener("click", ()=> {
+    namePlayer = undefined;
+    numNameHuman = undefined
+    penalPortada.style.display = "block";
+    penalContainer.style.display = "none";
+   })
+
+
 const btnEasy = document.getElementById("btn-easy");
 
 const btnHard = document.getElementById("btn-hard");
@@ -10,9 +89,9 @@ let humanScore = 0;
 
 let cpuScore = 0;
 
-let namePlayer = prompt("Ingresa tu nombre o apodo");
 
-let numNameHuman = namePlayer;
+
+
 
 // SELECCION DE LADOS DEL ARCO **
 let lado1 = document.getElementById("arco-lado-1");
@@ -25,10 +104,13 @@ let lado6 = document.getElementById("arco-lado-6");
 
 
 // SELECCION Y ARMADO DEL SCORE ** 
-document.getElementById("name-player").innerHTML = namePlayer.toUpperCase();
-document.getElementById("numNameH").innerHTML = numNameHuman.toUpperCase();
-document.getElementById("cpu-score").innerHTML = cpuScore;
-document.getElementById("human-score").innerHTML = humanScore;
+function tablero() {
+    document.getElementById("name-player").innerHTML = namePlayer.toUpperCase();
+    document.getElementById("numNameH").innerHTML = numNameHuman.toUpperCase();
+    document.getElementById("cpu-score").innerHTML = cpuScore;
+    document.getElementById("human-score").innerHTML = humanScore;
+}
+
 
 
 // ARMADO DE HISTORIAL DE LADOS ELEGIDOS **

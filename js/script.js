@@ -102,7 +102,3 @@ btnResetColor.addEventListener("click", () => {
 
 
 
-
-
-
-

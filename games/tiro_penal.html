@@ -19,14 +19,24 @@
             </div>
             <nav>
                 <ul class="nav-link">
-                    <li><a href="codigos.html">CODIGOS</a></li>
+                    <li><a href="codigos.html">CODIGO</a></li>
                     <li><a href="#footer">CONTACTO</a></li>
                 </ul>
             </nav>
         </header>
         <main>
+            <div class="codebar">
             <section class="game-active">
-                <div class="battle-container">
+                <div id="penalportada" class="portadapenal">
+                    <h2>TIRO PENAL</h2>
+                    <div class="ingresabox">
+                        <label for="ingresanombre">Ingresa tu nombre</label>
+                        <input id="ingresanombre" type="text">
+                        <input id="btnentrar" type="submit" value="Entrar">
+                    </div>
+                    
+                </div>
+                <div id="penalcontainer" class="penal-container">
                     <div class="resultado">
                         <div class="tp-score" id="local-score">
                             <p id="name-player"></p>
@@ -59,14 +69,26 @@
                             <div id="arco-lado-6" class="arco-lado"><span class="ncelda">6</span></div>
                         </div>
                         <div class="btn-tiro-penal">
+                            <button class="btn-style" id="btn-penal-volver">VOLVER</button>
                             <button class="btn-style btn-style-1" id="btn-easy">EASY</button>
-                            <button class=" btn-style-1" id="btn-reset">RESET</button>
-                            <button class=" btn-style-1" id="btn-hard">HARD</button>
+                            <button class="btn-style" id="btn-reset">RESET</button>
+                            <button class="btn-style" id="btn-hard">HARD</button>
                         </div>
                     </div>    
                 </div>
             </section>
+           
+            <h3 id="vercodigos">Ver Codigo</h3>
+            <div>
+                <button class="btncode" id="btn-html">HTML</button>
+                <button class="btncode" id="btn-css">CSS</button>
+                <button class="btncode" id="btn-js">JS</button>
+            </div>
+                <div id="codigosel" class="mostrarCodigo">
 
+                </div>
+        </div>
+        
             <section class="game-gallery">
                 <div class="game-box">
                     <div class="game-img">
@@ -188,8 +210,17 @@
             <hr class="game-line">
         </main>
         <footer id="footer">
-            <div class="logo">LOGO DE OCIOJS</div>
+            <div class="logo"><a href="../index.html">
+                    <h1><span class="spanllaves">{</span>OcioJs<span class="spanllaves">}</span></h1>
+                </a></div>
             <div class="copyright">Creado por Pablo Mainardi</div>
+            <div class="logoslink">
+                <a href="mailto:pablo.mainardi@hotmail.com"><img src="../image/mail.png" alt="logo de mail"></a>
+                <a href="https://github.com/pablomainardi"><img src="../image/github.png" alt="logo de github"></a>
+                <a href="https://www.freecodecamp.org/pablo_mainardi"><img src="../image/freecodecamp.png" alt="logo de freecodecamp"></a>
+                <a href="http://www.linkedin.com/in/pabloarielmainardi"><img src="../image/linkedin.png" alt="logo de linked"></a>
+            </div>
+            
         </footer>
     </div>
     <script src="../js/script.js"></script>
