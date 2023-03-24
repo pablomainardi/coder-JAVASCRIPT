@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>OcioJs</title>
     <link rel="stylesheet" href="./css/main.css">
+    <script defer src="./js/script.js"></script>
 </head>
 
 <body>
@@ -24,16 +25,21 @@
             </nav>
         </header>
         <main>
-            <h2>Juegos realizados con HTML, CSS y JS</h2>
-            <p>Esta es una pequeña recreacion de mi proceso de aprendisaje en Javascript. Fue un proceso de 2 meses de
-                buenas clases en CoderHouse y asentando bien la logica de lo aprendido. Obvio apoyado con material
-                exterior y muchas horas de practica. En este proceso de aprendisaje, quise volcar mi practica a un
-                esquema de juegos.
-            <p>Cada juego tiene su codigo publicado, codigo que es fiel testigo del proceso de empezar de cero. </p>
+            <div class="txtinicio">
+
+                <p>Esta es una pequeña recreación de mi proceso de aprendizaje en JavaScript. Fue un proceso de 2 meses
+                    con
+                    buenas clases en CoderHouse y asentando bien la lógica de lo aprendido. Obvio apoyado con material
+                    exterior y muchas horas de práctica.
+                <p>Cada juego tiene su código publicado, código que es fiel testigo del proceso de empezar de cero.</p>
+            </div>
+
+
+
             <section class="game-gallery">
                 <div class="game-box">
-                    <div class="game-img"><a href="./games/cardjsbattle.html"><img src="https://picsum.photos/200/150"
-                                alt="Imagen del juego 3 en raya"></a>
+                    <div class="game-img"><a href="./games/cardjsbattle.html"><img src="./image/cardjsbattle.jpg"
+                                alt="Imagen del juego card js battle" width="200px"></a>
                     </div>
                     <div class="game-desc">
                         <a href="./games/cardjsbattle.html">
@@ -49,7 +55,7 @@
                 </div>
                 <div class="game-box">
                     <div class="game-img"><a href="./games/tiro_penal.html"><img width="200px"
-                                src="./image/tiro_penal.jpg" alt="Imagen del juego Tiro Penal"></a>
+                                src="./image/tiropenal.jpg" alt="Imagen del juego Tiro Penal"></a>
                     </div>
                     <div class="game-desc">
                         <a href="./games/tiro_penal.html">
@@ -63,8 +69,8 @@
                         <code># JS lines: 167</code><br>
                     </div>
                 </div>
-                <div class="game-box">
-                    <div class="game-img"><a href="./games/tiro_penal.html"><img src="https://picsum.photos/200/150"
+                <!--                <div class="game-box">
+                    <div class="game-img"><a href="./games/tiropenal.html"><img src="https://picsum.photos/200/150"
                                 alt=""></a>
                     </div>
                     <div class="game-desc">
@@ -95,10 +101,28 @@
                         <code># JS lines: </code><br>
                     </div>
                 </div>
+            -->
+
             </section>
+            <div class="location">
+                <h3>Tu ubicación utilizando la Api de ipwho.is</h3>
+                <div class="locationbox">
+                    <div id="location-ip"></div>
+                    <div id="location-country"></div>
+                    <div id="location-city"></div>
+                </div>
+                <div id="location-map">
+
+                </div>
+            </div>
             <hr class="game-line">
-            <div class="cambiarcolor">
-                <h3 class="rst3px">Elige tus colores</h3>
+            <div class="personalizarcolor">
+                <h3>Queres personalizar los colores de la pagina?</h3>
+                <button id="btn-personalizar">Personalizar</button>
+            </div>
+
+            <div id="cuadrocolor" class="cambiarcolor">
+                <h3 class="rst3px">Colores</h3>
                 <div class="colorBox">
                     <div>
                         <label for="fuente1">Fuente 1</label>
@@ -146,14 +170,17 @@
             <div class="logoslink">
                 <a href="mailto:pablo.mainardi@hotmail.com"><img src="./image/mail.png" alt="logo de mail"></a>
                 <a href="https://github.com/pablomainardi"><img src="./image/github.png" alt="logo de github"></a>
-                <a href="https://www.freecodecamp.org/pablo_mainardi"><img src="./image/freecodecamp.png" alt="logo de freecodecamp"></a>
-                <a href="http://www.linkedin.com/in/pabloarielmainardi"><img src="./image/linkedin.png" alt="logo de linked"></a>
+                <a href="https://www.freecodecamp.org/pablo_mainardi"><img src="./image/freecodecamp.png"
+                        alt="logo de freecodecamp"></a>
+                <a href="http://www.linkedin.com/in/pabloarielmainardi"><img src="./image/linkedin.png"
+                        alt="logo de linked"></a>
             </div>
-            
+
+
         </footer>
     </div>
-    <script src="./js/script.js"></script>
-    <script src="./js/games/cardjsbattle.js"></script>
+
+
 </body>
 
 </html>

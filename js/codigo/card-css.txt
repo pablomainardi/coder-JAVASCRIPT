@@ -223,6 +223,11 @@
     width: 100%;
 }
 
+.midtxt {
+    color: #ddd;
+    font-weight: 500;
+}
+
 .left {
     width: 100%;
     font-size: 18px;
@@ -282,7 +287,6 @@
     margin: 5px;
     padding: 5px;
     font-size: 18px;
-
 }
 
 .f2-i7-col3 {

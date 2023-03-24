@@ -1,125 +1,51 @@
-<section class="game-active">
+                <section class="game-active">
+                    <div id="penalportada" class="portadapenal">
+                        <h2>TIRO PENAL</h2>
+                        <div class="ingresabox">
+                            <label for="ingresanombre">Ingresa tu nombre</label>
+                            <input id="ingresanombre" type="text">
+                            <input id="btnentrar" type="submit" value="Entrar">
+                        </div>
 
-                <div id="container-box" class="container-box">
-                    <div id="btn-portada-inicio">
-                        <button class="btn-portada-inicio">INICIAR</button>
                     </div>
-                    <div id="flex-1" class="container-flex flex-1">
-                        <div class="flex1-items flex1-items-1">ELIGE TU CARTA</div>
-                        <div class="flex1-items flex1-items-2">
-                            <div id="f1-i1-img1" class="f1-i2-cartaimg">
-                                <img src="./cardjsbattle/carta1.jpg" alt="Imagen carta 1">
+                    <div id="penalcontainer" class="penal-container">
+                        <div class="resultado">
+                            <div class="tp-score" id="local-score">
+                                <p id="name-player"></p>
+                                <p id="human-score"></p>
+                                <p id="human-dir"></p>
                             </div>
-                            <div id="f1-i1-img2" class="f1-i2-cartaimg">
-                                <img src="./cardjsbattle/carta2.jpg" alt="Imagen carta 2">
-                            </div>
-                            <div id="f1-i1-img3" class="f1-i2-cartaimg">
-                                <img src="./cardjsbattle/carta3.jpg" alt="Imagen carta 3">
-                            </div>
-                            <div id="f1-i1-img4" class="f1-i2-cartaimg">
-                                <img src="./cardjsbattle/carta4.jpg" alt="Imagen carta 4">
-                            </div>
-                            <div id="f1-i1-img5" class="f1-i2-cartaimg">
-                                <img src="./cardjsbattle/carta5.jpg" alt="Imagen carta 5">
-                            </div>
-                            <div id="f1-i1-img6" class="f1-i2-cartaimg">
-                                <img src="./cardjsbattle/carta6.jpg" alt="Imagen carta 6">
+                            <div class="tp-score">
+                                <p>CPU</p>
+                                <p id="cpu-score"></p>
+                                <p id="cpu-dir"></p>
                             </div>
                         </div>
-                        <div class="flex1-items flex1-items-3" id="nombrecarta">NOMBRE DE TU CARTA</div>
-
-                        <div class="flex1-items flex1-items-4">
-                            <div id="f1-i4-imgcarta"></div>
-                            <div class="div-skill">
-                                <code id="skillVida" class="d-skill"></code>
-                                <code id="skillAtaque" class="d-skill"></code>
-                                <code id="skillVelocidad" class="d-skill"></code>
-                                <code id="skillDefensa" class="d-skill"></code>
-                                <code id="skillClase" class="d-skill"></code>
+                        <div class="estadistica-box">
+                            <div class="estadistica">
+                                <span>Tiradas <span id="numNameH"></span></span>
+                                <p id="numHuman"></p>
+                            </div>
+                            <div class="estadistica">
+                                <span>Tiradas CPU</span>
+                                <p id="numCpu"></p>
                             </div>
                         </div>
-                        <div class="flex1-items flex1-items-5">
-                            <button class="btn-volver" id="btnaportada">ATRAS</button>
-                            <button id="irbatalla" class="btn-batalla">SIGUIENTE</button>
-                        </div>
-                    </div>
-                    <div id="flex-2" class="container-flex flex-2">
-                        <div class="flex2-items flex2-items-1">SELECCIONA TU MOVIMIENTO</div>
-                        <div class="flex2-items flex2-items-2">
-                            <button id="btn-ata-1">OFENSIVO 1</button>
-                            <button id="btn-ata-2">OFENSIVO 2</button>
-                            <button id="btn-ata-3">OFENSIVO 3</button>
-                        </div>
-                        <div class="flex2-items flex2-items-3"></div>
-                        <div class="flex2-items flex2-items-4">
-                            <button id="btn-def-1">DEFENSIVO 1</button>
-                            <button id="btn-def-2">DEFENSIVO 2</button>
-                            <button id="btn-def-3">DEFENSIVO 3</button>
-                        </div>
-                        <div class="flex2-items flex2-items-5">
-                            <div id="f2-i5-col1"></div>
-                            <div class="f2-i5-col2">
-                                <span class="vs-vs">
-                                    vs
-                                </span>
-                                <span id="roundNum">1</span>
+                        <div class="boxjuego">
+                            <div id="arco">
+                                <div id="arco-lado-1" class="arco-lado"><span class="ncelda">1</span></div>
+                                <div id="arco-lado-2" class="arco-lado"><span class="ncelda">2</span></div>
+                                <div id="arco-lado-3" class="arco-lado"><span class="ncelda">3</span></div>
+                                <div id="arco-lado-4" class="arco-lado"><span class="ncelda">4</span></div>
+                                <div id="arco-lado-5" class="arco-lado"><span class="ncelda">5</span></div>
+                                <div id="arco-lado-6" class="arco-lado"><span class="ncelda">6</span></div>
                             </div>
-                            <div id="f2-i5-col3"><img width="120px" src="./cardjsbattle/interrogacion.jpg"
-                                    alt="carta random del rival"></div>
-                        </div>
-                        <div class="center-btn">
-                            <div id="left-mid" class="left">
-                                <div id="left-mid-2"></div>
+                            <div class="btn-tiro-penal">
+                                <button class="btn-style" id="btn-penal-volver">VOLVER</button>
+                                <button class="btn-style btn-style-1" id="btn-easy">EASY</button>
+                                <button class="btn-style" id="btn-reset">RESET</button>
+                                <button class="btn-style" id="btn-hard">HARD</button>
                             </div>
-                            <div class="box-btn-iniciar">
-                                <button id="iniciarbatalla">INICIAR BATALLA</button>
-
-                            </div>
-                            <div id="right-mid" class="right">
-                                <div id="right-mid-2"></div>
-                            </div>
-                        </div>
-                        <div id="d-skillE2" class="flex2-items flex2-items-6 boxlocal">
-                            <div class="div-skill" id="f2-i6-col1">
-                                <code id="miSkillVida" class="d-skill"></code>
-                                <code id="miSkillAtaque" class="d-skill"></code>
-                                <code id="miSkillVelocidad" class="d-skill"></code>
-                                <code id="miSkillDefensa" class="d-skill"></code>
-                                <code id="miSkillClase" class="d-skill"></code>
-                            </div>
-
-                            <div id="d-skillE2" class="boxrival">
-                                <div class="div-skill" id="f2-i6-col3">
-                                    <code id="rivalSkillVida" class="d-skill"></code>
-                                    <code id="rivalSkillAtaque" class="d-skill"></code>
-                                    <code id="rivalSkillVelocidad" class="d-skill"></code>
-                                    <code id="rivalSkillDefensa" class="d-skill"></code>
-                                    <code id="rivalSkillClase" class="d-skill"></code>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="flex2-items flex2-items-7">
-
-                            <div class="f2-i7-col1">
-                                <div class="globodato" id="miAtaTotal">130</div>
-                                <div class="globodato" id="miDefTotal">150</div>
-                                <div class="vidadato" id="miVidTotal">???</div>
-                            </div>
-                            <div class="f2-i7-col2">
-                                <div id="">ATAQUE total</div>
-                                <div id="">DEFENSA total</div>
-                                <div id="">VIDA total</div>
-                            </div>
-                            <div class="f2-i7-col3">
-                                <div class="globodato" id="ataTotalRival">???</div>
-                                <div class="globodato" id="defTotalRival">???</div>
-                                <div class="vidadato" id="vidTotalRival">???</div>
-                            </div>
-                        </div>
-
-                        <div class="flex2-items flex2-items-8">
-                            <button id="cambiarRival">CAMBIAR RIVAL</button> <button id="volverinicio">ATRAS</button>
                         </div>
                     </div>
-                </div>
-            </section>
+                </section>

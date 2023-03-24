@@ -1,3 +1,40 @@
+// API DE GEOLOCACION
+let ipVisitante = document.querySelector("#location-ip");
+let cityVisitante = document.querySelector("#location-country");
+let countryVisitante = document.querySelector("#location-city");
+let mapaVisitante = document.querySelector("#location-map");
+let latitudVis = undefined;
+let longitudVis = undefined;
+
+
+fetch("http://ipwho.is/")
+    .then(res => res.json())
+    .then(data => {
+        console.log(data);
+
+        ipVisitante.textContent = data.ip;
+        countryVisitante.textContent = data.country;
+        cityVisitante.textContent = data.city;
+        latitudVis = data.latitude;
+        longitudVis = data.longitude;
+        mapaVisitante.innerHTML = '<iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d13144.619493449756!2d' + longitudVis + '!3d' + latitudVis + '!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMzTCsDMyJzU5LjYiUyA1OMKwMjgnNTcuOSJX!5e0!3m2!1ses-419!2sar!4v1679682252495!5m2!1ses-419!2sar" width="400" height="300" style="border-radius: 25px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>';
+    })
+    .catch(error => console.error(error))
+
+// CUADRO DE ELECCION DE COLORES
+const btnPersonalizar = document.querySelector("#btn-personalizar");
+const cuadroColor = document.querySelector("#cuadrocolor");
+let cuadroActivo = false;
+
+btnPersonalizar.addEventListener("click", () => {
+    if (cuadroActivo) {
+        cuadroColor.style.display = "none";
+        cuadroActivo = false;
+    } else {
+        cuadroColor.style.display = "block";
+        cuadroActivo = true;
+    }
+})
 
 // ESTABLECIENDO VARIABLES PARA COLOR DE FONDO **
 const rootCss = document.querySelector(":root");
@@ -33,15 +70,15 @@ function colorSel() {
     bg2 = document.querySelector("#bg2").value;
     luzBox = document.querySelector("#luzbox").value;
 
-    localStorage.setItem("fuente1",JSON.stringify(fuente1));
-    localStorage.setItem("fuente2",JSON.stringify(fuente2));
-    localStorage.setItem("bg1",JSON.stringify(bg1));
-    localStorage.setItem("bg2",JSON.stringify(bg2));
-    localStorage.setItem("luzBox",JSON.stringify(luzBox));
+    localStorage.setItem("fuente1", JSON.stringify(fuente1));
+    localStorage.setItem("fuente2", JSON.stringify(fuente2));
+    localStorage.setItem("bg1", JSON.stringify(bg1));
+    localStorage.setItem("bg2", JSON.stringify(bg2));
+    localStorage.setItem("luzBox", JSON.stringify(luzBox));
 
 }
 
-function aplicarColor(){
+function aplicarColor() {
     rootCss.style.setProperty('--fuente1', fuente1);
     rootCss.style.setProperty('--fuente2', fuente2);
     rootCss.style.setProperty('--bg1', bg1);
@@ -75,10 +112,10 @@ btnCambiarColor.addEventListener("click", () => {
 
 // FUNCION PARA RESETEAR COLOR
 function resetColor() {
-    
+
     rootCss.style.setProperty('--fuente1', "#28A43d");
     document.querySelector("#fuente1").value = "#28A43d";
-    
+
     rootCss.style.setProperty('--fuente2', "#959595");
     document.querySelector("#fuente2").value = "#959595";
 

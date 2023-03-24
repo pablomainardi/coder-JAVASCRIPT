@@ -6,8 +6,6 @@ codigoSel = document.querySelector("#codigosel");
 
 let codigoSelActivado = false;
 
-
-
 btnHtml.addEventListener("click", () => {
     if (codigoSelActivado) {
         codigoSelActivado = false;
@@ -49,7 +47,6 @@ btnJs.addEventListener("click", () => {
         codigoSel.innerHTML = '<iframe src="../js/codigo/card-html.txt"></iframe>';
     }
 })
-
 
 // BOTONES DE NAVEGACION ENTRE PORTADA/ETAPA1/ETAPA2 **  
 let carta1 = {};
@@ -146,7 +143,6 @@ btnIrEtapa2.addEventListener("click", () => {
     sonidoEtapas.play();
 });
 
-
 // VOLVER A INICIO - BTN VOLVERINICIO **
 function volverInicio() {
     reseteo();
@@ -173,8 +169,12 @@ function reseteo() {
     carta4.vida = 9800;
     carta5.vida = 10500;
     carta6.vida = 9300;
-    document.querySelector("#ataTotalRival").innerHTML = "???";
-    document.querySelector("#defTotalRival").innerHTML = "???"
+    document.querySelector("#ataTotalRival").innerHTML = "? ? ?";
+    document.querySelector("#defTotalRival").innerHTML = "? ? ?";
+    midLeft.innerHTML = "? ? ?"
+    midRight.innerHTML = "? ? ?"
+    iniciarBatalla.innerHTML = "INICIAR BATALLA"
+    iniciarBatalla.style.backgroundColor = "#ddd";
 }
 
 //ETAPA 1 -- ** ELECCION DE CARTA******** */
@@ -188,13 +188,11 @@ const imgCarta6 = document.querySelector("#f1-i1-img6");
 
 const imgCartas = [imgCarta1, imgCarta2, imgCarta3, imgCarta4, imgCarta5, imgCarta6];
 
-
 function mostrarNombres() {
     for (nombre of mazo) {
         console.log(nombre)
     }
 }
-
 
 // ETAPA 1 -- SELECCIONAR CARTA Y MOSTRAR HABILIDADES
 
@@ -263,7 +261,6 @@ imgCarta6.addEventListener("click", () => {
     sonidoSeleccion.play();
 })
 
-
 // ETAPA 2 ********************************************
 
 /*local vs visitante roundi/mg */
@@ -304,12 +301,10 @@ divRival.addEventListener("click", () => {
     console.log(cartaRival);
 });
 
-
 const cambiarRival = document.querySelector("#cambiarRival");
 
 // click boton cambiar rival
-cambiarRival.addEventListener("click", ()=>{
-    reseteo();
+cambiarRival.addEventListener("click", () => {
     randomRivalSel();
 });
 
@@ -351,7 +346,6 @@ function habilidadesVivoRival(i) {
     document.querySelector("#rivalSkillDefensa").innerHTML = "DEFENSA______" + i.defensa;
     document.querySelector("#rivalSkillClase").innerHTML = "CLASE_____" + i.clase;
 }
-
 
 let indiceRandomRival = undefined;
 
@@ -403,11 +397,11 @@ function ataque1(paraQuien) {
 
 function ataque2(paraQuien) {
     if (paraQuien === miCarta) {
-        miAtaque = ((paraQuien.ataque * (paraQuien.velocidad / 2)) + (paraQuien.ataque / 2));
-        miDefensa = ((paraQuien.defensa * (paraQuien.velocidad / 2)) + (paraQuien.defensa / 2));
+        miAtaque = ((paraQuien.ataque * (paraQuien.velocidad / 2)) + (paraQuien.defensa));
+        miDefensa = ((paraQuien.defensa * (paraQuien.velocidad / 2)) + (paraQuien.ataque));
     } else {
-        ataqueRival = ((paraQuien.ataque * (paraQuien.velocidad / 2)) + (paraQuien.ataque / 2));
-        defensaRival = ((paraQuien.defensa * (paraQuien.velocidad / 2)) + (paraQuien.defensa / 2));
+        ataqueRival = ((paraQuien.ataque * (paraQuien.velocidad / 2)) + (paraQuien.defensa / 2));
+        defensaRival = ((paraQuien.defensa * (paraQuien.velocidad / 2)) + (paraQuien.ataque / 2));
     }
 }
 
@@ -434,11 +428,11 @@ function defensa1(paraQuien) {
 
 function defensa2(paraQuien) {
     if (paraQuien === miCarta) {
-        miDefensa = ((paraQuien.defensa * (paraQuien.velocidad / 2)) + (paraQuien.defensa / 2));
-        miAtaque = ((paraQuien.ataque * (paraQuien.velocidad / 2)) + (paraQuien.ataque / 2));
+        miDefensa = ((paraQuien.defensa * (paraQuien.velocidad / 2)) + (paraQuien.ataque / 2));
+        miAtaque = ((paraQuien.ataque * (paraQuien.velocidad / 2)) + (paraQuien.defensa / 2));
     } else {
-        defensaRival = ((paraQuien.defensa * (paraQuien.velocidad / 2)) + (paraQuien.defensa / 2));
-        ataqueRival = ((paraQuien.ataque * (paraQuien.velocidad / 2)) + (paraQuien.ataque / 2));
+        defensaRival = ((paraQuien.defensa * (paraQuien.velocidad / 2)) + (paraQuien.ataque));
+        ataqueRival = ((paraQuien.ataque * (paraQuien.velocidad / 2)) + (paraQuien.defensa));
     }
 }
 
@@ -539,7 +533,6 @@ const midLeft = document.querySelector("#left-mid");
 const midRight2 = document.querySelector("#right-mid-2");
 const midLeft2 = document.querySelector("#left-mid-2");
 
-
 function finBatalla() {
     if ((miCarta.vida < 0) || (cartaRival.vida < 0)) {
         iniciarBatalla.removeEventListener("click", batallaIniciada);
@@ -560,12 +553,10 @@ function batallaIniciada() {
     setTimeout(resultado, 500);
 }
 
-
 let miAtaTotal = undefined;
 let miDefTotal = undefined;
 let rivalDefTotal = undefined;
 let rivalAtaTotal = undefined;
-
 
 function mostrarVida() {
     vidaTotalRival.innerHTML = cartaRival.vida;
@@ -574,6 +565,7 @@ function mostrarVida() {
 
 function resultado() {
     randomAtaqueRival();
+
     if (miAtaque > defensaRival) {
         miAtaTotal = miAtaque - defensaRival;
         midLeft.innerHTML = "Mi ataque te quito " + miAtaTotal + " de vida";

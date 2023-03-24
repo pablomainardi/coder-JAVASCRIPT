@@ -6,8 +6,6 @@ codigoSel = document.querySelector("#codigosel");
 
 let codigoSelActivado = false;
 
-
-
 btnHtml.addEventListener("click", () => {
     if (codigoSelActivado) {
         codigoSelActivado = false;
@@ -61,21 +59,20 @@ const btnPenalVolver = document.querySelector("#btn-penal-volver");
 let namePlayer = undefined;
 let numNameHuman = undefined;
 
-btnEntrar.addEventListener("click", ()=> {
+btnEntrar.addEventListener("click", () => {
     namePlayer = document.querySelector("#ingresanombre").value;
     numNameHuman = namePlayer;
- penalPortada.style.display = "none";
- penalContainer.style.display = "flex";
- tablero();
+    penalPortada.style.display = "none";
+    penalContainer.style.display = "flex";
+    tablero();
 })
 
-btnPenalVolver.addEventListener("click", ()=> {
+btnPenalVolver.addEventListener("click", () => {
     namePlayer = undefined;
     numNameHuman = undefined
     penalPortada.style.display = "block";
     penalContainer.style.display = "none";
-   })
-
+})
 
 const btnEasy = document.getElementById("btn-easy");
 
@@ -89,10 +86,6 @@ let humanScore = 0;
 
 let cpuScore = 0;
 
-
-
-
-
 // SELECCION DE LADOS DEL ARCO **
 let lado1 = document.getElementById("arco-lado-1");
 let lado2 = document.getElementById("arco-lado-2");
@@ -101,8 +94,6 @@ let lado4 = document.getElementById("arco-lado-4");
 let lado5 = document.getElementById("arco-lado-5");
 let lado6 = document.getElementById("arco-lado-6");
 
-
-
 // SELECCION Y ARMADO DEL SCORE ** 
 function tablero() {
     document.getElementById("name-player").innerHTML = namePlayer.toUpperCase();
@@ -110,8 +101,6 @@ function tablero() {
     document.getElementById("cpu-score").innerHTML = cpuScore;
     document.getElementById("human-score").innerHTML = humanScore;
 }
-
-
 
 // ARMADO DE HISTORIAL DE LADOS ELEGIDOS **
 numH = [];
@@ -127,7 +116,6 @@ function numeroC() {
     }
 }
 
-
 // VERIFICACION DE MODO HARD/EASY Y EJECUCION DE PENAL **
 function iniciaTanda(direc) {
     if (dificultadSi) {
@@ -136,7 +124,6 @@ function iniciaTanda(direc) {
         penalEjecutado(direc);
     }
 }
-
 
 // MODO HARD - EJECUCION DE PENAL **
 function modoHardPenalEjecutado(direc) {
@@ -163,7 +150,6 @@ function modoHardPenalEjecutado(direc) {
     document.getElementById("numHuman").innerHTML = numH;
     document.getElementById("numCpu").innerHTML = numC;
 }
-
 
 // MODO EASY - EJECUCION DE PENAL **
 function penalEjecutado(direc) {
@@ -193,7 +179,6 @@ function penalEjecutado(direc) {
     document.getElementById("numCpu").innerHTML = numC;
 }
 
-
 // BOTONES EASY / RESET / HARD **
 btnEasy.addEventListener("click", () => {
     btnEasy.style.background = "#3a6";
@@ -221,7 +206,6 @@ btnReset.addEventListener("click", () => {
     document.getElementById("numCpu").innerHTML = numC;
 })
 
-
 // ELECCION DE LADO Y PASO DE PARAMETRO PARA ELECCION DE MODO Y LUEGO LA EJECUCION DEL PENAL **
 lado1.addEventListener("click", () => {
     iniciaTanda(1);
@@ -247,5 +231,3 @@ lado6.addEventListener("click", () => {
     iniciaTanda(6);
 
 })
-
-
