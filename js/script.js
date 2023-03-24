@@ -7,7 +7,7 @@ let latitudVis = undefined;
 let longitudVis = undefined;
 
 
-fetch("http://ipwho.is/")
+fetch("https://ipwho.is/")
     .then(res => res.json())
     .then(data => {
         console.log(data);
